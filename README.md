@@ -13,7 +13,7 @@
 
 Een leuke ervaring met als focus op entertainment. 
 
-##Hoe zal de VR wereld er ongeveer uitzien   
+## Hoe zal de VR wereld er ongeveer uitzien   
 
 Western met dessert thema. Er zullen 2 objecten tevoorschijn komen 1 als target en 1 friendly. 
 
