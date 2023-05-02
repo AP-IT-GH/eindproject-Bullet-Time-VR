@@ -1,6 +1,6 @@
 # Eindopdracht 
 
-###VR-Experience 
+### VR-Experience 
 
 **Studenten:**  
 
@@ -9,7 +9,7 @@
 3. Kevin Lahey 
 4. Quinten Moons 
 
-##Wat is het doel van de VR toepassing 
+## Wat is het doel van de VR toepassing 
 
 Een leuke ervaring met als focus op entertainment. 
 
@@ -23,12 +23,12 @@ Jij (de speler) en de ML agent worden naast elkaar geplaatst en zullen om ter sn
 
 We kunnen uiteindelijk verschillende agents trainen voor verschillende moeilijkheden. (1 minder trainen en 1 harder trainen). 
 
-##Wat is de functie van de ML-Agent 
+## Wat is de functie van de ML-Agent 
 
 Uw tegenspeler met geheugen. We moeten beide op een target schieten wie het snelste is, wint. 
 
 
-##Hoe wordt de agent beloond tijdens de training 
+## Hoe wordt de agent beloond tijdens de training 
 
 We gaan dit in verschillende stadia doen 
 
