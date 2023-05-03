@@ -7569,7 +7569,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 432427381957648214, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
 --- !u!4 &1340521879 stripped
 Transform:
@@ -12156,6 +12157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver_Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 432427381957648214, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 794965158903345902, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -12204,7 +12209,8 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 290100752}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 432427381957648214, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
 --- !u!4 &432427381957648209 stripped
 Transform:
