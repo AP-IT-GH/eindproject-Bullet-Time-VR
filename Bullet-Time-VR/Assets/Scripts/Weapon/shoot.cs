@@ -95,7 +95,7 @@ public class shoot : MonoBehaviour
             newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
             start = true;
             timer = 0f;
-            //GunShot.Play();
+            GunShot.Play();
         }
 
         if (start)

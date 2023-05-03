@@ -12181,6 +12181,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1112011446}
     - target: {fileID: 2050893339722155055, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
+      propertyPath: GunShot
+      value: 
+      objectReference: {fileID: 212848439836622744}
+    - target: {fileID: 2050893339722155055, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
       propertyPath: maxAmmo
       value: 6
       objectReference: {fileID: 0}
@@ -12241,6 +12245,11 @@ PrefabInstance:
 --- !u!4 &212848439836622743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6548879496589514802, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
+  m_PrefabInstance: {fileID: 212848439836622742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &212848439836622744 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2634235682982240092, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
   m_PrefabInstance: {fileID: 212848439836622742}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &432427381957648208
