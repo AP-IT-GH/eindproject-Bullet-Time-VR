@@ -1,4 +1,4 @@
-### Documentatie van het project.
+# Documentatie van het project.
 
 
 De assets die we gebruiken zijn:
