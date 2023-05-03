@@ -1,8 +1,8 @@
 # Documentatie van het project.
 
-### Assets
+### Assets:
 
-De assets die we gebruiken zijn:
+Voor de map gebruiken we:
   - eretichable Technologies
   - Low-poly Western Town
 
