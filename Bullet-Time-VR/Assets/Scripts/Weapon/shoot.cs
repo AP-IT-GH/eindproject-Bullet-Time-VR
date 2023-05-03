@@ -91,11 +91,9 @@ public class shoot : MonoBehaviour
             //GetComponent<ProceduralRecoil>().recoil();
 
             //gameObject.GetComponent<Animator>().Play("shoot");
-            GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+            
             start = true;
             timer = 0f;
-            GunShot.Play();
         }
 
         if (start)
@@ -126,12 +124,19 @@ public class shoot : MonoBehaviour
         isReloading = false;
     }
 
-    void Shoot()
+    public void Shoot()
     {
+        //Gunshot sounds
+        GunShot.Play();
+
+        //Bullet aanmaken
+        GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
