@@ -593,9 +593,10 @@ GameObject:
   - component: {fileID: 7009338580465325451}
   - component: {fileID: 3203199245043153252}
   - component: {fileID: 6033400872570437848}
+  - component: {fileID: 2050893339722155055}
   m_Layer: 0
   m_Name: Revolver_LP
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,6 +791,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.076278664, y: 0.17479323, z: 0.32427168}
   m_Center: {x: 0.0027287574, y: 0.0106780715, z: 0.034199983}
+--- !u!114 &2050893339722155055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884405469530735240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29921379a5b21dc4db6ed2f3de673c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
+  GunShot: {fileID: 0}
+  ReloadClip: {fileID: 0}
+  maxAmmo: 6
+  reloadTime: 1
+  Gun: {fileID: 5884405469530735240}
+  damage: 10
+  range: 100
+  fpsCam: {fileID: 0}
+  MuzzleFlash: {fileID: 0}
+  shootRate: 1
 --- !u!1 &7065678250186275707
 GameObject:
   m_ObjectHideFlags: 0

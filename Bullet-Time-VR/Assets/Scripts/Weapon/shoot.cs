@@ -15,11 +15,11 @@ public class shoot : MonoBehaviour
     public int maxAmmo = 15;
     private int currentAmmo;
 
-    public Text AmmoText;
+    //public Text AmmoText;
     public float reloadTime = 1f;
     private bool isReloading = false;
 
-    public Animator animator;
+    //public Animator animator;
 
     //ADS
     public GameObject Gun;
@@ -38,13 +38,13 @@ public class shoot : MonoBehaviour
     {
         //reload
         currentAmmo = maxAmmo;
-        AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
+        //AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
     }
 
     void OnEnable()
     {
         isReloading = false;
-        animator.SetBool("Reloading", false);
+        //animator.SetBool("Reloading", false);
     }
 
     // Update is called once per frame
@@ -82,20 +82,20 @@ public class shoot : MonoBehaviour
             Shoot();
             //Ammunition
             currentAmmo--;
-            AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
+            //AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
 
             //Muzzle flash
             //MuzzleFlash.SetActive(true);
 
             //Recoil
-            GetComponent<ProceduralRecoil>().recoil();
+            //GetComponent<ProceduralRecoil>().recoil();
 
             //gameObject.GetComponent<Animator>().Play("shoot");
             GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
             newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
             start = true;
             timer = 0f;
-            GunShot.Play();
+            //GunShot.Play();
         }
 
         if (start)
@@ -116,9 +116,9 @@ public class shoot : MonoBehaviour
         isReloading = true;
         ReloadClip.Play();
 
-        animator.SetBool("Reloading", true);
+        //animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - .25f);
-        animator.SetBool("Reloading", false);
+        //animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(.25f);
 
         currentAmmo = maxAmmo;
@@ -131,7 +131,7 @@ public class shoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            //Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
