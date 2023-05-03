@@ -6,15 +6,16 @@ using Unity.MLAgents.Actuators;
 using Google.Protobuf.WellKnownTypes;
 
 [RequireComponent(typeof(Rigidbody))]
-public class JumpAgent : Agent
+public class ShooterAgent : Agent
 {
     public GameObject Target;
     public GameObject Friendly;
 
-    public Vector3 MLAgentStartPosition;
+    public Quaternion MLAgentStartPosition;
 
     private float randomSpeed;
     private RaycastHit hit;
+    public float rotationMultiplier = 2f;
 
 
     public List<Vector3> positions = new List<Vector3>();
@@ -22,42 +23,37 @@ public class JumpAgent : Agent
 
 
 
-
-    void Update()
-    {
-        // Beweeg het blokje vooruit langs de X-as
-        // Reset MLagent to start position
-        // 
-
-    }
-
-
     public override void OnEpisodeBegin()
     {
 
-        this.gameObject.transform.localPosition = MLAgentStartPosition;
+        this.gameObject.transform.localRotation = MLAgentStartPosition;
+        Vector3 randomPosition = positions[Random.Range(0, positions.Count)]; // Zet target op een random positie
+        Target.transform.localPosition = randomPosition;
+
 
     }
 
 
     public override void CollectObservations(VectorSensor sensor)
     {    // Agent positie    
-        sensor.AddObservation(this.transform.localPosition.y);
-        //sensor.AddObservation(obstacle.transform.localPosition.x);
-        sensor.AddObservation(randomSpeed);
+        sensor.AddObservation(this.transform.rotation.y);
+
+
     }
 
 
-    public float jumpForce = 30f;
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {    // Acties, size = 2;
 
 
         bool shoot = actionBuffers.DiscreteActions[0] == 1;
+        this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[1], 0.0f);
+        print(this.transform.rotation);
         print(actionBuffers.DiscreteActions[0]);
 
         if (shoot) // if jump button is pressed and is on the ground
         {
+            print("Pang");
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
             if (Physics.Raycast(ray, out hit, 100f))
             {
@@ -80,17 +76,24 @@ public class JumpAgent : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var DiscreteActionsOut = actionsOut.DiscreteActions;
+        var continuousActionsOut = actionsOut.ContinuousActions;
 
         if (Input.GetMouseButtonDown(0))
         {
             DiscreteActionsOut[0] = 1;
+            print("shoot");
         } else
         {
             DiscreteActionsOut[0] = 0;
+            
         }
 
 
-        
+        continuousActionsOut[1] = Input.GetAxis("Horizontal");
+        print(continuousActionsOut[1]);
+
+
+
     }
 
 
