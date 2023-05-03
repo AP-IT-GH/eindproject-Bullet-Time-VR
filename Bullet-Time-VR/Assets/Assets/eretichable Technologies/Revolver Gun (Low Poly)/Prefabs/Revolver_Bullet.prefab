@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2772738579625811331}
   - component: {fileID: 2514119506629710253}
   - component: {fileID: 432427381957648214}
+  - component: {fileID: 5647475927843807939}
   m_Layer: 0
   m_Name: Revolver_Bullet
   m_TagString: Untagged
@@ -264,3 +265,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010261011, y: 0.01026102, z: 0.051479004}
   m_Center: {x: -0.015019601, y: 0.05043777, z: 0.019302903}
+--- !u!114 &5647475927843807939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19026177839507540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b18968570049249937ae9d8329bec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

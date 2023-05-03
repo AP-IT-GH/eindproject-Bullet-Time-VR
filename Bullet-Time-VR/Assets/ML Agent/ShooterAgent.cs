@@ -8,38 +8,35 @@ using Google.Protobuf.WellKnownTypes;
 [RequireComponent(typeof(Rigidbody))]
 public class JumpAgent : Agent
 {
-    public GameObject obstacle;
-    public GameObject bonus;
+    public GameObject Target;
+    public GameObject Friendly;
 
-    Rigidbody rb;
-    bool onGround = true;
+    public Vector3 MLAgentStartPosition;
+
     private float randomSpeed;
     private RaycastHit hit;
 
 
+    public List<Vector3> positions = new List<Vector3>();
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+
+
 
 
     void Update()
     {
         // Beweeg het blokje vooruit langs de X-as
-        obstacle.transform.Translate(Vector3.right * randomSpeed * Time.deltaTime);
-        bonus.transform.Translate(Vector3.right * randomSpeed * 1.1f * Time.deltaTime);
+        // Reset MLagent to start position
+        // 
+
     }
 
 
     public override void OnEpisodeBegin()
     {
-        //reset obstacle naar begin positie
-        randomSpeed = Random.Range(3f, 7f);
-        bonus.SetActive(true);
-        obstacle.transform.localPosition = new Vector3(0, 0.5f, 5f); // reset obstacle 
-        bonus.transform.localPosition = new Vector3(0, 5f, 5f); // reset bonus 
-        this.gameObject.transform.localPosition = new Vector3(0f, 0.5f, -4f); // reset agent
+
+        this.gameObject.transform.localPosition = MLAgentStartPosition;
+
     }
 
 
@@ -98,4 +95,4 @@ public class JumpAgent : Agent
 
 
     }
-}
+
