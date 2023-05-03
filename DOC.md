@@ -1,6 +1,6 @@
 # Documentatie van het project.
 
-## Assets
+### Assets
 
 De assets die we gebruiken zijn:
   - eretichable Technologies
