@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Friendly
   - Target
+  - Weapon
+  - Target_F
+  - Friendly_F
   layers:
   - Default
   - TransparentFX

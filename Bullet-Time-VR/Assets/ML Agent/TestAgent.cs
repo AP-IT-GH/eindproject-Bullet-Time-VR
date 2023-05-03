@@ -7,8 +7,6 @@ using Unity.MLAgents.Sensors;
 
 public class TestAgent : Agent
 {
-    public GameObject ground;
-
     public GameObject Friendly;
     public GameObject Target;
     public GameObject Friendly_F;
@@ -26,50 +24,57 @@ public class TestAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        //Set target to onthoud
         m_Selection = Random.Range(0, 2);
-        if (m_Selection == 0)
+        if (m_Selection == 1)
         {
-            Friendly.transform.position = new Vector3(0f + Random.Range(-3f, 3f), 2f, Random.Range(-5f, 5f)) + ground.transform.position;
-            Target.transform.position = new Vector3(0f, -1000f, Random.Range(-5f, 5f)) + ground.transform.position;
+            Friendly_F.transform.position = new Vector3(0f, 1f, 3f);
+            Target_F.transform.position = new Vector3(0f, -100f, 3f);
         }
         else
         {
-            Friendly.transform.position = new Vector3(0f, -1000f, Random.Range(-5f, 5f))+ ground.transform.position;
-            Target.transform.position = new Vector3(0f, 2f, Random.Range(-5f, 5f)) + ground.transform.position;
+            Friendly_F.transform.position = new Vector3(0f, -100f, 3f);
+            Target_F.transform.position = new Vector3(0f, 1f, 3f);
         }
 
-        transform.position = new Vector3(0f + Random.Range(-3f, 3f),1f, Random.Range(-5f, 5f))+ ground.transform.position;
-        transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        //Zet anget locatie
+        transform.position = new Vector3(0f, 0.5f, 7f);
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         m_AgentRb.velocity *= 0f;
 
+        //Switch position for targets to go to
         var goalPos = Random.Range(0, 2);
         if (goalPos == 0)
         {
-            Friendly_F.transform.position = new Vector3(7f, 0.5f, 22.29f);
-            Target_F.transform.position = new Vector3(-7f, 0.5f, 22.29f);
+            Friendly.transform.position = new Vector3(1f, 1f, -4f);
+            Target.transform.position = new Vector3(-1f, 1f, -4f);
         }
         else
         {
-            Friendly_F.transform.position = new Vector3(7f, 0.5f, 22.29f);
-            Target_F.transform.position = new Vector3(-7f, 0.5f, 22.29f);
+            Friendly.transform.position = new Vector3(-1f, 1f, -4f);
+            Target.transform.position = new Vector3(1f, 1f, -4f);
         }
+
+        //Geen idee wat dit doe
         m_statsRecorder.Add("Goal/Correct", 0, StatAggregationMethod.Sum);
         m_statsRecorder.Add("Goal/Wrong", 0, StatAggregationMethod.Sum);
     }
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("symbol_O_Goal") || col.gameObject.CompareTag("symbol_X_Goal"))
+        if (col.gameObject.CompareTag("Target") || col.gameObject.CompareTag("Friendly"))
         {
-            if ((m_Selection == 0 && col.gameObject.CompareTag("symbol_O_Goal")) || (m_Selection == 1 && col.gameObject.CompareTag("symbol_X_Goal")))
+            if ((m_Selection == 0 && col.gameObject.CompareTag("Target")) || (m_Selection == 1 && col.gameObject.CompareTag("Friendly")))
             {
                 SetReward(1f);
                 m_statsRecorder.Add("Goal/Correct", 1, StatAggregationMethod.Sum);
+                print("Juist");
             }
             else
             {
                 SetReward(-0.1f);
                 m_statsRecorder.Add("Goal/Wrong", 1, StatAggregationMethod.Sum);
+                print("Fout");
             }
             EndEpisode();
         }
@@ -78,6 +83,7 @@ public class TestAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         //sensor.AddObservation(StepCount / (float)MaxStep);
+        sensor.AddObservation(transform.rotation.y);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -85,6 +91,13 @@ public class TestAgent : Agent
     {
         //AddReward(-1f / MaxStep);
         MoveAgent(actionBuffers.DiscreteActions);
+
+        // Als agent onder de grond is of een blok aanraakt
+        if (transform.localPosition.y < 0)
+        {
+            SetReward(-2f);
+            EndEpisode();
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -130,6 +143,6 @@ public class TestAgent : Agent
                 break;
         }
         transform.Rotate(rotateDir, Time.deltaTime * 150f);
-        m_AgentRb.AddForce(dirToGo * 1.0f, ForceMode.VelocityChange);
+        m_AgentRb.AddForce(dirToGo * 0.5f, ForceMode.VelocityChange);
     }
 }

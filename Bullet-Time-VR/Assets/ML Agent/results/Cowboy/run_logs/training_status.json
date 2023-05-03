@@ -1,0 +1,29 @@
+{
+    "Cowboy": {
+        "checkpoints": [
+            {
+                "steps": 17664,
+                "file_path": "results\\Cowboy\\Cowboy\\Cowboy-17664.onnx",
+                "reward": -2.0,
+                "creation_time": 1683112188.9569526,
+                "auxillary_file_paths": [
+                    "results\\Cowboy\\Cowboy\\Cowboy-17664.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 17664,
+            "file_path": "results\\Cowboy\\Cowboy.onnx",
+            "reward": -2.0,
+            "creation_time": 1683112188.9569526,
+            "auxillary_file_paths": [
+                "results\\Cowboy\\Cowboy\\Cowboy-17664.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
