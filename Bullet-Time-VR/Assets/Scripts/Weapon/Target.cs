@@ -15,7 +15,7 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        gameObject.GetComponent<Animator>().Play("Z_FallingBack");
+        //gameObject.GetComponent<Animator>().Play("uw animatie (komt hier)");
         Destroy(gameObject, 1f);
     }
 }

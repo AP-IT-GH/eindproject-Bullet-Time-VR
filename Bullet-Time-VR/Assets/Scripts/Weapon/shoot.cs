@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class shoot : MonoBehaviour
 {
-
     //Bullet & shoot
     public GameObject projectile;
     public AudioSource GunShot;
@@ -19,10 +18,6 @@ public class shoot : MonoBehaviour
     public float reloadTime = 1f;
     private bool isReloading = false;
 
-    //public Animator animator;
-
-    //ADS
-    public GameObject Gun;
 
     //Shooting
     public float damage = 10f;
@@ -57,16 +52,6 @@ public class shoot : MonoBehaviour
         if (isReloading)
             return;
 
-        //ADS
-        if (Input.GetMouseButtonDown(1))
-        {
-            Gun.GetComponent<Animator>().Play("ADS");
-        }
-
-        if (Input.GetMouseButtonUp(1))
-        {
-            Gun.GetComponent<Animator>().Play("New State");
-        }
 
         float shoot = Input.GetAxis("Fire1");
 
@@ -79,7 +64,9 @@ public class shoot : MonoBehaviour
         //shoot
         if (shoot == 1 && timer >= shootRate)
         {
-            Shoot();
+            //Shoot();
+
+
             //Ammunition
             currentAmmo--;
             //AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
@@ -91,11 +78,9 @@ public class shoot : MonoBehaviour
             //GetComponent<ProceduralRecoil>().recoil();
 
             //gameObject.GetComponent<Animator>().Play("shoot");
-            GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+            
             start = true;
             timer = 0f;
-            GunShot.Play();
         }
 
         if (start)
@@ -126,8 +111,15 @@ public class shoot : MonoBehaviour
         isReloading = false;
     }
 
-    void Shoot()
+    public void Shoot()
     {
+        //Gunshot sounds
+        GunShot.Play();
+
+        //Bullet aanmaken
+        GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
