@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1964524110199458177}
   - component: {fileID: 2242608087034665111}
   - component: {fileID: 2772738579625811331}
+  - component: {fileID: 2514119506629710253}
+  - component: {fileID: 432427381957648214}
   m_Layer: 0
   m_Name: Revolver_Bullet
   m_TagString: Untagged
@@ -236,3 +238,29 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &2514119506629710253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19026177839507540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010261013, y: 0.01026102, z: 0.051479004}
+  m_Center: {x: -0.015019598, y: 0.050437897, z: 0.0193029}
+--- !u!65 &432427381957648214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19026177839507540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010261011, y: 0.01026102, z: 0.051479004}
+  m_Center: {x: -0.015019601, y: 0.05043777, z: 0.019302903}
