@@ -72,7 +72,7 @@ public class ShooterAgent : Agent
                             }
                         }*/
 
-            if (shoot != null)
+            if (shootScript != null)
             {
                 string tag = shootScript.Shoot();
                 if (tag == "Target")

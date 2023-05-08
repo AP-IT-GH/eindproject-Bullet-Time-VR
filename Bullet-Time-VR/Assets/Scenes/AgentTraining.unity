@@ -283,8 +283,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643559099}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.07, y: 1.03, z: 1.47}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07, y: 0.449, z: -0.225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -570,6 +570,10 @@ PrefabInstance:
       propertyPath: shootScript
       value: 
       objectReference: {fileID: 315594621}
+    - target: {fileID: 4589143831334153992, guid: 9ebc94ae4beb843c4b8cf4521a7a23c5, type: 3}
+      propertyPath: rotationMultiplier
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4589143831334153992, guid: 9ebc94ae4beb843c4b8cf4521a7a23c5, type: 3}
       propertyPath: MLAgentStartPosition
       value: 
