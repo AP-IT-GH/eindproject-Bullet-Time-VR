@@ -111,7 +111,7 @@ public class shoot : MonoBehaviour
         isReloading = false;
     }
 
-    public void Shoot()
+    public string Shoot()
     {
         //Gunshot sounds
         GunShot.Play();
@@ -123,13 +123,17 @@ public class shoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            /*Debug.Log(hit.transform.name);*/
+
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
                 target.TakeDamage(damage);
             }
+            return hit.collider.gameObject.tag;
         }
+
+        return null;
     }
 }
