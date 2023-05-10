@@ -16,6 +16,11 @@ public class Target : MonoBehaviour
     void Die()
     {
         //gameObject.GetComponent<Animator>().Play("uw animatie (komt hier)");
-        Destroy(gameObject, 1f);
+        
+        ///Verwijderen van target
+        //Destroy(gameObject, 1f);
+
+        ///Onzichtbaar maken van target
+        gameObject.SetActive(false);
     }
 }
