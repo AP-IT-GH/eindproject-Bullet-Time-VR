@@ -117,7 +117,7 @@ public class shoot : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             // Draw raycast in scene view
-            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green);
+            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 5f);
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
