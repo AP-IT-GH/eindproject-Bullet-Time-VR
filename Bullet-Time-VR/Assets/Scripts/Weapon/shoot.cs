@@ -39,7 +39,6 @@ public class shoot : MonoBehaviour
     void OnEnable()
     {
         isReloading = false;
-        //animator.SetBool("Reloading", false);
     }
 
     // Update is called once per frame
@@ -73,11 +72,6 @@ public class shoot : MonoBehaviour
 
             //Muzzle flash
             //MuzzleFlash.SetActive(true);
-
-            //Recoil
-            //GetComponent<ProceduralRecoil>().recoil();
-
-            //gameObject.GetComponent<Animator>().Play("shoot");
             
             start = true;
             timer = 0f;
@@ -101,9 +95,7 @@ public class shoot : MonoBehaviour
         isReloading = true;
         ReloadClip.Play();
 
-        //animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - .25f);
-        //animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(.25f);
 
         currentAmmo = maxAmmo;
