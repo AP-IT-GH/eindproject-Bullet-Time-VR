@@ -11,8 +11,9 @@
 	- Importeer de nodige assets die je wilt gebruiken.
 
 2. Design een map
-	https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG
+![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
 
+	
 3. Scripten
 	- Een shoot script met raycast.
 	- Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
