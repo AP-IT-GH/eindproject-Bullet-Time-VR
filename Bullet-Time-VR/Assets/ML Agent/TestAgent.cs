@@ -78,7 +78,7 @@ public class TestAgent : Agent
             print("Shoot");
             if (shootScript != null)
             {
-                string tag = shootScript.Shoot();
+                string tag = shootScript.ShootGun();
                 if ((tag == "Friendly" && goalPos==0) || (tag == "Target" && goalPos == 1))
                 {
                     print("Target hit");
