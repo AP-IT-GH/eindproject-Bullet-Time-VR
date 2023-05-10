@@ -6,8 +6,8 @@
 
 ###
 1. Begin met je omgeving te creeren dit bevat volgende zaken
-	a. Uw targets, ML Agent en friendly.
-	b. Importeer alle packeges (ML Agents en XR rig).
+	- Uw targets, ML Agent en friendly.
+	- Importeer alle packeges (ML Agents en XR rig).
 	c. Importeer de nodige assets die je wilt gebruiken.
 
 2. Design een map
