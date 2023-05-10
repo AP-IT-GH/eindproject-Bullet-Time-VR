@@ -136,4 +136,30 @@ public class shoot : MonoBehaviour
 
         return null;
     }
+
+
+
+    public void ShootNoReturn()
+    {
+        //Gunshot sounds
+        GunShot.Play();
+
+        //Bullet aanmaken
+        GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+
+
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+        }
+
+    }
 }
