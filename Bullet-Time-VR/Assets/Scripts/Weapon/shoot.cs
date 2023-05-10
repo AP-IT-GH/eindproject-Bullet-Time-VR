@@ -113,18 +113,19 @@ public class shoot : MonoBehaviour
 
     public string Shoot()
     {
-        //Gunshot sounds
+        // Gunshot sounds
         GunShot.Play();
 
-        //Bullet aanmaken
+        // Bullet aanmaken
         GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
         newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
 
+        // Perform raycast
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            /*Debug.Log(hit.transform.name);*/
-
+            // Draw raycast in scene view
+            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green);
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
@@ -134,9 +135,11 @@ public class shoot : MonoBehaviour
             return hit.collider.gameObject.tag;
         }
 
+        // Draw raycast in scene view
+        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * range, Color.red);
+
         return null;
     }
-
 
 
     public void ShootNoReturn()
