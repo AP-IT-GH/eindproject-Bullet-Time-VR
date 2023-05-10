@@ -28,3 +28,6 @@
 	- Als de agent de target raakt krijgt die een positieve beloning.
 	- Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
 	- Als de agent de friendly raakt krijgt hij een negatieve beloning.
+
+6. Afwerking
+	- UI: Een start scherm en reset scherm.
