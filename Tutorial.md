@@ -25,6 +25,50 @@
 		public override void OnActionReceived(ActionBuffers actionBuffers)
     		{
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
+
+		```
+		public override void OnActionReceived(ActionBuffers actionBuffers)
+    		{    // Acties, size = 2;
+
+
+        		bool shoot = actionBuffers.DiscreteActions[0] == 1;
+        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
+        		/*        print(this.transform.rotation);
+                		print(actionBuffers.DiscreteActions[0]);
+        		*/
+        		if (shoot) // if jump button is pressed and is on the ground
+        		{
+            		print("Pang");
+            		/*            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+                        		if (Physics.Raycast(ray, out hit, 100f))
+                        		{
+                            		// Check if the raycast hit an object with the specified tag
+                            		if (hit.collider.CompareTag("Target"))
+                            		{
+                                		// Do something if the raycast hit the target object
+                                		Debug.Log("Raycast hit target object!");
+                                		SetReward(1);
+
+                            		}
+                        		}*/
+
+            		if (shootScript != null)
+            		{
+                		string tag = shootScript.ShootGun();
+                		if (tag == "Target")
+                		{
+                    		print("Target hit");
+                    		SetReward(1);
+                		} else
+                		{
+                    		  SetReward(-0.1f);
+                		}
+            		}
+
+            		EndEpisode();
+        		}
+
+    		}
 		
 
 4. Trainen
