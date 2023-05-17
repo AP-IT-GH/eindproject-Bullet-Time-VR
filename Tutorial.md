@@ -24,7 +24,7 @@
 		```
 		public override void OnActionReceived(ActionBuffers actionBuffers)
     		{
-        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
+        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);```
 
 	  en de tweede is schieten.
 		
