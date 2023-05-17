@@ -50,13 +50,13 @@ public class CameraTest : Agent
         m_AgentRb.velocity *= 0f;
 
 
-        //goalPos = Random.Range(0, 2);
-        goalPos = 0;
+        goalPos = Random.Range(0, 2);
+        //goalPos = 0;
         if (goalPos == 0)
         {
-            Friendly_F.SetActive(false);    //PAS DIT AAN
+            Friendly_F.SetActive(true); //Groen
             Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
-            Target_F.SetActive(false);
+            Target_F.SetActive(false);  //Rood
             Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
         }
         else
@@ -81,7 +81,6 @@ public class CameraTest : Agent
     {
         bool shoot = actionBuffers.DiscreteActions[0] == 1;
         int rotate = actionBuffers.DiscreteActions[1];
-        print(transform.localRotation);
 
         if (rotate == 1 && !shot) {    //Right
             Vector3 newRotation = new Vector3(0, -160, 0);
@@ -108,8 +107,8 @@ public class CameraTest : Agent
             }
             else if ((m_Selection == 1 && goalPos == 1 && direction == "L") || (m_Selection == 0 && goalPos == 1 && direction == "R"))  //Rechts
             {
-                //print("Rood");
-                print("NEEN");
+                print("Rood");
+                //print("NEEN");
                 //SetReward(1f);
             }
             else

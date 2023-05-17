@@ -1,0 +1,47 @@
+{
+    "Cowboy": {
+        "checkpoints": [
+            {
+                "steps": 499988,
+                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-499988.onnx",
+                "reward": 0.7777777777777778,
+                "creation_time": 1684318445.3989425,
+                "auxillary_file_paths": [
+                    "results\\CowboyAgent1\\Cowboy\\Cowboy-499988.pt"
+                ]
+            },
+            {
+                "steps": 999984,
+                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-999984.onnx",
+                "reward": 0.42857142857142855,
+                "creation_time": 1684319686.229885,
+                "auxillary_file_paths": [
+                    "results\\CowboyAgent1\\Cowboy\\Cowboy-999984.pt"
+                ]
+            },
+            {
+                "steps": 1000012,
+                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.onnx",
+                "reward": 0.4444444444444444,
+                "creation_time": 1684319686.32833,
+                "auxillary_file_paths": [
+                    "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000012,
+            "file_path": "results\\CowboyAgent1\\Cowboy.onnx",
+            "reward": 0.4444444444444444,
+            "creation_time": 1684319686.32833,
+            "auxillary_file_paths": [
+                "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
