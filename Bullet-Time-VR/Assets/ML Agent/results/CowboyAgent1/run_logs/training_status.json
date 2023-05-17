@@ -2,40 +2,31 @@
     "Cowboy": {
         "checkpoints": [
             {
-                "steps": 499988,
-                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-499988.onnx",
-                "reward": 0.7777777777777778,
-                "creation_time": 1684318445.3989425,
+                "steps": 499999,
+                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-499999.onnx",
+                "reward": 0.6279863481228669,
+                "creation_time": 1684323826.206303,
                 "auxillary_file_paths": [
-                    "results\\CowboyAgent1\\Cowboy\\Cowboy-499988.pt"
+                    "results\\CowboyAgent1\\Cowboy\\Cowboy-499999.pt"
                 ]
             },
             {
-                "steps": 999984,
-                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-999984.onnx",
-                "reward": 0.42857142857142855,
-                "creation_time": 1684319686.229885,
+                "steps": 627608,
+                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-627608.onnx",
+                "reward": 0.6259574468085106,
+                "creation_time": 1684324409.1156042,
                 "auxillary_file_paths": [
-                    "results\\CowboyAgent1\\Cowboy\\Cowboy-999984.pt"
-                ]
-            },
-            {
-                "steps": 1000012,
-                "file_path": "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.onnx",
-                "reward": 0.4444444444444444,
-                "creation_time": 1684319686.32833,
-                "auxillary_file_paths": [
-                    "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.pt"
+                    "results\\CowboyAgent1\\Cowboy\\Cowboy-627608.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1000012,
+            "steps": 627608,
             "file_path": "results\\CowboyAgent1\\Cowboy.onnx",
-            "reward": 0.4444444444444444,
-            "creation_time": 1684319686.32833,
+            "reward": 0.6259574468085106,
+            "creation_time": 1684324409.1156042,
             "auxillary_file_paths": [
-                "results\\CowboyAgent1\\Cowboy\\Cowboy-1000012.pt"
+                "results\\CowboyAgent1\\Cowboy\\Cowboy-627608.pt"
             ]
         }
     },
