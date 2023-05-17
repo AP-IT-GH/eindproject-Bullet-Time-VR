@@ -21,7 +21,8 @@
 	  Dit is van belang omdat de snelste het spel zal winnen.
 	- Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
 	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: de eerste is omdraaien dit doen we aan de hand van deze functie 
-		```public override void OnActionReceived(ActionBuffers actionBuffers)
+		```
+		public override void OnActionReceived(ActionBuffers actionBuffers)
     		{
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
 
