@@ -20,7 +20,7 @@
 	- Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
 	  Dit is van belang omdat de snelste het spel zal winnen.
 	- Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
-	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: de eerste is is schieten en de tweede is omdraaien dit doen we aan de hand van deze functie 
+	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: het eerste is omdraaien dit doen we aan de hand van deze functie 
 
 ```
 		public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -28,32 +28,16 @@
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);'
 
 ```
+de tweede is het schieten
 
 ```
 		public override void OnActionReceived(ActionBuffers actionBuffers)
-    		{    // Acties, size = 2;
-
-
+    		{
         		bool shoot = actionBuffers.DiscreteActions[0] == 1;
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
-        		/*        print(this.transform.rotation);
-                		print(actionBuffers.DiscreteActions[0]);
-        		*/
         		if (shoot) // if jump button is pressed and is on the ground
         		{
             		print("Pang");
-            		/*            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
-                        		if (Physics.Raycast(ray, out hit, 100f))
-                        		{
-                            		// Check if the raycast hit an object with the specified tag
-                            		if (hit.collider.CompareTag("Target"))
-                            		{
-                                		// Do something if the raycast hit the target object
-                                		Debug.Log("Raycast hit target object!");
-                                		SetReward(1);
-
-                            		}
-                        		}*/
 
             		if (shootScript != null)
             		{
@@ -70,7 +54,6 @@
 
             		EndEpisode();
         		}
-
     		}
 ```
 
