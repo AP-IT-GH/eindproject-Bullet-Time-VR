@@ -253,35 +253,33 @@ public class shoot : MonoBehaviour
 
 
 
-    //public string Shoot()
-    //{
-    //    // Gunshot sounds
-    //    GunShot.Play();
-
-    //    // Bullet aanmaken
-    //    GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-    //    newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
+    public string Shoot()
+    {
+        // Gunshot sounds
+        GunShot.Play();
+           //    // Bullet aanmaken
+        GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
 
     //    // Perform raycast
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-    //    {
-    //        // Draw raycast in scene view
-    //        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 5f);
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            // Draw raycast in scene view
+            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 5f);
 
-    //        Target target = hit.transform.GetComponent<Target>();
-    //        if (target != null)
-    //        {
-    //            target.TakeDamage(damage);
-    //        }
-    //        return hit.collider.gameObject.tag;
-    //    }
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+            return hit.collider.gameObject.tag;
+        }
+           //    // Draw raycast in scene view
+        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * range, Color.red);
 
-    //    // Draw raycast in scene view
-    //    Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * range, Color.red);
-
-    //    return null;
-    //}
+        return null;
+    }
 
 
     //public void ShootNoReturn()

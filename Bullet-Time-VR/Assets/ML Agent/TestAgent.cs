@@ -7,8 +7,6 @@ using Unity.MLAgents.Sensors;
 
 public class TestAgent : Agent
 {
-    public GameObject ground;
-
     public GameObject Friendly;
     public GameObject Target;
     public GameObject Friendly_F;
@@ -20,6 +18,7 @@ public class TestAgent : Agent
     StatsRecorder m_statsRecorder;
 
     public shoot shootScript;
+    bool shot = false;
 
     public override void Initialize()
     {
@@ -29,6 +28,7 @@ public class TestAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        shot = false;
         Friendly.SetActive(true);
         Target.SetActive(true);
 
@@ -51,13 +51,13 @@ public class TestAgent : Agent
         goalPos = Random.Range(0, 2);
         if (goalPos == 0)
         {
-            Friendly_F.transform.position = new Vector3(0f, 1f, 10f);
-            Target_F.transform.position = new Vector3(0f, -1000f, 10f);
+            Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
+            Target_F.transform.localPosition = new Vector3(0f, -1000f, 10f);
         }
         else
         {
-            Friendly_F.transform.position = new Vector3(0f, -1000f, 10f);
-            Target_F.transform.position = new Vector3(0f, 1f, 10f);
+            Friendly_F.transform.localPosition = new Vector3(0f, -1000f, 10f);
+            Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
         }
         m_statsRecorder.Add("Goal/Correct", 0, StatAggregationMethod.Sum);
         m_statsRecorder.Add("Goal/Wrong", 0, StatAggregationMethod.Sum);
@@ -66,36 +66,46 @@ public class TestAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.rotation.y);
+        sensor.AddObservation(shot);
     }
  
     public override void OnActionReceived(ActionBuffers actionBuffers)
 
     {
         bool shoot = actionBuffers.DiscreteActions[0] == 1;
+        print(shoot);
         transform.Rotate(0.0f, 2.0f * actionBuffers.ContinuousActions[0], 0.0f);
-        if (shoot)
+        if (shoot && !shot)
         {
+            shot = true;
             print("Shoot");
             if (shootScript != null)
             {
-                string tag = shootScript.ShootGun();
-                if ((tag == "Friendly" && goalPos==0) || (tag == "Target" && goalPos == 1))
+                string tag = shootScript.Shoot();
+                if ((tag == "Friendly" && goalPos == 0) || (tag == "Target" && goalPos == 1))
                 {
                     print("Target hit");
                     SetReward(1);
                 }
-                else if(tag == null)
+                else if ((tag == "Friendly" && goalPos == 1) || (tag == "Target" && goalPos == 0))  //Hit wrong
                 {
-                    print("Target miss");
-                    SetReward(-1f);
+                    print("Wrong target");
+                    SetReward(-0.5f);
                 }
-                else
+                else if (tag == null)    //Hit nothing
                 {
+                    print("Miss");
                     SetReward(-0.1f);
                 }
-                //EndEpisode();
+                delay();
+                EndEpisode();
             }
         }
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
