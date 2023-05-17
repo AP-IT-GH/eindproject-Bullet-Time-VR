@@ -12,17 +12,26 @@
 
 2. Design een map
 ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
+	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreerd.
+	https://himmelfar.itch.io/low-poly-western-town 
 
 	
 3. Scripten
-	- Een shoot script met raycast.
+	- Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
+	  Dit is van belang omdat de snelste het spel zal winnen.
 	- Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
-	- ML agent script met geheugen.
+	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: de eerste is omdraaien dit doen we aan de hand van deze functie 
+		```public override void OnActionReceived(ActionBuffers actionBuffers)
+    		{
+        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
+
+	  en de tweede is schieten.
+		
 
 4. Trainen
 	- Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
-	   Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
-	   opnieuw zoeken en zo snel mogelijk schieten op de target.
+	  Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
+	  opnieuw zoeken en zo snel mogelijk schieten op de target.
 
 5. Belonen
 	- Als de agent de target raakt krijgt die een positieve beloning.
