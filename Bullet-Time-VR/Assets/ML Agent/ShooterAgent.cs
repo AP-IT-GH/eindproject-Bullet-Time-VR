@@ -27,6 +27,7 @@ public class ShooterAgent : Agent
 
 
 
+
     public override void OnEpisodeBegin()
     {
 
@@ -74,7 +75,7 @@ public class ShooterAgent : Agent
 
             if (shootScript != null)
             {
-                string tag = shootScript.ShootGun();
+                string tag = shootScript.Shoot();
                 if (tag == "Target")
                 {
                     print("Target hit");

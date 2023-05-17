@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class shoot : MonoBehaviour
 {
+
+
+
+
+    public string hitTag = null;
+    public bool shot = false;
     //Bullet & shoot
     public GameObject projectile;
     public AudioSource GunShot;
@@ -106,158 +112,18 @@ public class shoot : MonoBehaviour
 
 
 
-    public void ShootGunNoReturn()
-    {
-        if (isReloading)
-            return;
-
-
-        float shoot = Input.GetAxis("Fire1");
-
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
-
-        //shoot
-        if (shoot == 1 && timer >= shootRate)
-        {
-
-
-            //Gunshot sounds
-            GunShot.Play();
-
-            //Bullet aanmaken
-            GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
-
-            RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-            {
-                Debug.Log(hit.transform.name);
-
-
-                Target target = hit.transform.GetComponent<Target>();
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-
-
-            //Ammunition
-            currentAmmo--;
-            //AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
-
-            //Muzzle flash
-            //MuzzleFlash.SetActive(true);
-
-            start = true;
-            timer = 0f;
-        }
-
-        if (start)
-        {
-            if (timer < shootRate)
-                timer += Time.deltaTime;
-            else
-            {
-                timer = shootRate;
-                start = false;
-            }
-        }
-    }
-
-
-
-
-
-
-
-    public string ShootGun()
-    {
-        if (isReloading)
-            return "not shot";
-
-
-        float shoot = Input.GetAxis("Fire1");
-
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return "not shot";
-        }
-        
-        
-        string hitTag = "";
-
-        //shoot
-        if (shoot == 1 && timer >= shootRate)
-        {
-
-
-            // Gunshot sounds
-            GunShot.Play();
-
-            // Bullet aanmaken
-            GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
-
-            // Perform raycast
-            RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-            {
-                // Draw raycast in scene view
-                Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 5f);
-
-                Target target = hit.transform.GetComponent<Target>();
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-
-            }
-
-            // Draw raycast in scene view
-            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * range, Color.red);
-
-            hitTag = hit.collider.gameObject.tag;
-
-
-
-            //Ammunition
-            currentAmmo--;
-            //AmmoText.text = currentAmmo.ToString("Ammo: " + currentAmmo);
-
-            //Muzzle flash
-            //MuzzleFlash.SetActive(true);
-
-            start = true;
-            timer = 0f;
-        }
-
-        if (start)
-        {
-            if (timer < shootRate)
-                timer += Time.deltaTime;
-            else
-            {
-                timer = shootRate;
-                start = false;
-            }
-        }
-
-        return hitTag;
-    }
-
 
 
     public string Shoot()
     {
         // Gunshot sounds
         GunShot.Play();
-           //    // Bullet aanmaken
+
+
+        shot = true;
+
+
+        //    // Bullet aanmaken
         GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
         newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
 
@@ -268,11 +134,13 @@ public class shoot : MonoBehaviour
             // Draw raycast in scene view
             Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 5f);
 
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-            }
+            //Target target = hit.transform.GetComponent<Target>();
+            //if (target != null)
+            //{
+            //    target.TakeDamage(damage);
+            //}
+
+            hitTag = hit.collider.gameObject.tag;
             return hit.collider.gameObject.tag;
         }
            //    // Draw raycast in scene view
@@ -282,27 +150,66 @@ public class shoot : MonoBehaviour
     }
 
 
-    //public void ShootNoReturn()
-    //{
-    //    //Gunshot sounds
-    //    GunShot.Play();
+    public void ShootNoReturn()
+    {
+        //Gunshot sounds
+        GunShot.Play();
 
-    //    //Bullet aanmaken
-    //    GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-    //    newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
-
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-    //    {
-    //        Debug.Log(hit.transform.name);
+        shot = true;
 
 
-    //        Target target = hit.transform.GetComponent<Target>();
-    //        if (target != null)
-    //        {
-    //            target.TakeDamage(damage);
-    //        }
-    //    }
+        //Bullet aanmaken
+        GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
+        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100, ForceMode.VelocityChange);
 
-    //}
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+
+
+            //Target target = hit.transform.GetComponent<Target>();
+            //if (target != null)
+            //{
+            //    target.TakeDamage(damage);
+            //}
+
+            hitTag = hit.collider.gameObject.tag;
+        }
+
+    }
+
+
+
+
+
+    public void ResetShot()
+    {
+
+        shot = false;
+
+    }
+
+
+    public bool CheckShot()
+    {
+        return shot;
+    }
+
+
+    public string CheckHitTag()
+    {
+
+
+        return hitTag;
+    }
+
+    public void ResetHitTag()
+    {
+
+
+        hitTag = null;
+    }
+
+
 }
