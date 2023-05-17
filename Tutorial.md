@@ -11,7 +11,7 @@
 	- Importeer de nodige assets die je wilt gebruiken.
 
 2. Design een map
-![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
+	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
 	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreerd.
 	https://himmelfar.itch.io/low-poly-western-town 
 
@@ -39,3 +39,4 @@
 
 6. Afwerking
 	- UI: Een start scherm en reset scherm.
+	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
