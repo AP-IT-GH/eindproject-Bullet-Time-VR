@@ -1,8 +1,9 @@
 ## Een tutorial om ons project te reproduceren
-1. Niels Aarts
-2. Kevin Lahey
-3. Gil Struyf
-4. Quinten Moons
+Studenten:
+	1. Niels Aarts
+	2. Kevin Lahey
+	3. Gil Struyf
+	4. Quinten Moons
 
 ###
 1. Begin met je omgeving te creeren dit bevat volgende zaken
@@ -12,7 +13,7 @@
 
 2. Design een map
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
-	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreerd.
+	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreeerd.
 	https://himmelfar.itch.io/low-poly-western-town 
 
 	
@@ -20,7 +21,7 @@
 	- Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
 	  Dit is van belang omdat de snelste het spel zal winnen.
 	- Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
-	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: het eerste is omdraaien dit doen we aan de hand van deze functie 
+	- ML agent script met geheugen. We moeten de agent 2 stappen laten doen: het eerste is omdraaien dit doen we aan de hand van deze functie:
 
 ```
 		public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -28,7 +29,7 @@
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);'
 
 ```
-de tweede is het schieten
+De tweede is het schieten:
 
 ```
 		public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -51,7 +52,6 @@ de tweede is het schieten
                     		  SetReward(-0.1f);
                 		}
             		}
-
             		EndEpisode();
         		}
     		}
@@ -60,12 +60,13 @@ de tweede is het schieten
 4. Trainen
 	- Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
 	  Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
-	  opnieuw zoeken en zo snel mogelijk schieten op de target.
+	  opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
+	  Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
 
 5. Belonen
 	- Als de agent de target raakt krijgt die een positieve beloning.
 	- Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
-	- Als de agent de friendly raakt krijgt hij een negatieve beloning.
+	- Als de agent de friendly raakt krijgt hij een grotere negatieve beloning.
 
 6. Afwerking
 	- UI: Een start scherm en reset scherm.
