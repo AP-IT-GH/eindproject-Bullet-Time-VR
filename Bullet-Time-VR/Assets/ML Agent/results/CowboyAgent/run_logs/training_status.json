@@ -2,22 +2,22 @@
     "Cowboy": {
         "checkpoints": [
             {
-                "steps": 100002,
-                "file_path": "results\\CowboyAgent\\Cowboy\\Cowboy-100002.onnx",
+                "steps": 100004,
+                "file_path": "results\\CowboyAgent\\Cowboy\\Cowboy-100004.onnx",
                 "reward": 1.0,
-                "creation_time": 1684312428.1895914,
+                "creation_time": 1684314271.8893304,
                 "auxillary_file_paths": [
-                    "results\\CowboyAgent\\Cowboy\\Cowboy-100002.pt"
+                    "results\\CowboyAgent\\Cowboy\\Cowboy-100004.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 100002,
+            "steps": 100004,
             "file_path": "results\\CowboyAgent\\Cowboy.onnx",
             "reward": 1.0,
-            "creation_time": 1684312428.1895914,
+            "creation_time": 1684314271.8893304,
             "auxillary_file_paths": [
-                "results\\CowboyAgent\\Cowboy\\Cowboy-100002.pt"
+                "results\\CowboyAgent\\Cowboy\\Cowboy-100004.pt"
             ]
         }
     },
