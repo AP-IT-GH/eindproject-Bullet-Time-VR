@@ -13,7 +13,7 @@ Studenten:
 
 2. Design een map
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
-	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreerd.
+	- We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreeerd.
 	https://himmelfar.itch.io/low-poly-western-town 
 
 	
