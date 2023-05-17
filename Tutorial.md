@@ -27,6 +27,7 @@
         		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
 
 		```
+
 		public override void OnActionReceived(ActionBuffers actionBuffers)
     		{    // Acties, size = 2;
 
