@@ -39,7 +39,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026746195269606261}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -952,6 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29921379a5b21dc4db6ed2f3de673c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitTag: 
+  shot: 0
   projectile: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   GunShot: {fileID: 1026746195887513319}
   ReloadClip: {fileID: 0}
@@ -1155,7 +1157,7 @@ GameObject:
   - component: {fileID: 1026746196684147383}
   m_Layer: 0
   m_Name: Friendly_F
-  m_TagString: Untagged
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1256,6 +1258,7 @@ GameObject:
   - component: {fileID: 1026746196721133188}
   - component: {fileID: 1026746196721133191}
   - component: {fileID: 1026746196721133212}
+  - component: {fileID: 2037347323}
   m_Layer: 0
   m_Name: TestAgent
   m_TagString: Untagged
@@ -1356,8 +1359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
-    NumStackedVectorObservations: 3
+    VectorObservationSize: 5
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 0200000003000000
@@ -1442,8 +1445,36 @@ MonoBehaviour:
   m_Height: 32
   m_Grayscale: 0
   m_ObservationType: 0
-  m_ObservationStacks: 1
+  m_ObservationStacks: 4
   m_Compression: 1
+--- !u!114 &2037347323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026746196721133194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Target
+  - Friendly
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 15
+  m_SphereCastRadius: 0.7
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &1026746196741924676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1572,7 @@ GameObject:
   - component: {fileID: 1026746196824437145}
   m_Layer: 0
   m_Name: Target_F
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

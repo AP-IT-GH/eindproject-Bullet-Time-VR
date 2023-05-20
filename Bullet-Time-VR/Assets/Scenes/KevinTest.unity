@@ -677,10 +677,10 @@ PrefabInstance:
     - target: {fileID: 1026746196721133184, guid: 6a4d82500318aab4eb5ed23c02fd0efa, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: c11ec3dc49906eb4baefe741a98c3c77, type: 3}
     - target: {fileID: 1026746196721133184, guid: 6a4d82500318aab4eb5ed23c02fd0efa, type: 3}
       propertyPath: m_BehaviorType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1026746197177032992, guid: 6a4d82500318aab4eb5ed23c02fd0efa, type: 3}
       propertyPath: m_RootOrder

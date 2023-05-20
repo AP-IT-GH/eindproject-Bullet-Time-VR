@@ -15,9 +15,10 @@ behaviors:
       hidden_units: 256
       num_layers: 2
       vis_encode_type: simple
-      use_recurrent: true
-      sequence_length: 64
-      memory_size: 256
+      user_recurrent: true
+      memory:
+        sequence_length: 64
+        memory_size: 256
     reward_signals:
       extrinsic:
         gamma: 0.99

@@ -73,7 +73,7 @@ public class CameraTest : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         //sensor.AddObservation(Friendly.transform.localPosition);
-        // sensor.AddObservation(Target.transform.localPosition);
+        sensor.AddObservation(transform.rotation);
         sensor.AddObservation(shot);
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -103,18 +103,18 @@ public class CameraTest : Agent
             if ((goalPos == 0 && m_Selection == 0 && direction == "L") || (m_Selection == 1 && goalPos == 0 && direction == "R"))
             {
                 print("Groen");
-                SetReward(1f);
+                AddReward(1f);
             }
             else if ((m_Selection == 1 && goalPos == 1 && direction == "L") || (m_Selection == 0 && goalPos == 1 && direction == "R"))  //Rechts
             {
                 print("Rood");
                 //print("NEEN");
-                SetReward(1f);
+                AddReward(1f);
             }
             else
             {
                 print("FOUT");
-                SetReward(-0.5f);
+                AddReward(-1f);
             }
             // print(m_Selection);
             //print(goalPos);
