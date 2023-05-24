@@ -1,7 +1,7 @@
 ##Trainings verslag
-#### In het volgende document bespreken we hoe de training is verlopen. We behandelen de volgende onderwerpen: Hyperparameters, beloningen/straffen en grafieken.
+#### In het volgende document bespreken we hoe de training is verlopen. We behandelen de volgende onderwerpen: Hyperparameters, beloningen/straffen en we bespreken de grafieken.
 
-1. Hyper parameters
+1. Hyper parameters:
 ```
 behaviors:
   Cowboy:
@@ -36,13 +36,13 @@ behaviors:
 ```
 
 
-2. Beloningen/straffen
+2. Beloningen/straffen:
    - Correcte target (de target die wij laten zien voor het geheugen) = +1
    - Foute target (de friendly die de agent moet vermijden) = -1
    - Schieten vanuit de startpositie (op geen van beide, willekeurig) = -0.2
 
 
-3. Grafieken
+3. Grafieken:
    - We zijn begonnen met het herkennen van kleuren aan de hand van een camera.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2.jpg)
 
@@ -53,9 +53,10 @@ behaviors:
    - Vervolgens hebben wij hier het geheugen aan toegevoegd, dit zorgde voor wat tegenslag.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
 
-   - Hieronder de grafiek.
+   - Hier de grafiek.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2t.jpg)
 	
-   - Zelf hadden wij ook nog eens gelogged
+   - Zelf hadden wij ook nog eens gelogged. Waarbij shoot het aantal keren da we testen, rood is de juiste target, groen is de friendly target en FOUT is op geen van beide.
+     Hier zien we meteen dat de agent 50/50 kans pakt omdat hij na een tijd enkel naar rechts kijkt omdat hij daar 50% kans heeft.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_1.jpg)
    
