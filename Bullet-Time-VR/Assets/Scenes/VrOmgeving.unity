@@ -16292,7 +16292,7 @@ PrefabInstance:
       objectReference: {fileID: 290100752}
     - target: {fileID: 3203199245043153252, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShootGunNoReturn
+      value: ShootNoReturn
       objectReference: {fileID: 0}
     - target: {fileID: 5884405469530735240, guid: 3d6c7430bd21a564489df266ea8864e1, type: 3}
       propertyPath: m_Name
