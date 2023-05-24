@@ -1,7 +1,7 @@
-##Trainings verslag
+## Trainings verslag
 #### In het volgende document bespreken we hoe de training is verlopen. We behandelen de volgende onderwerpen: Hyperparameters, beloningen/straffen en we bespreken de grafieken.
 
-#####Inleiding
+##### Inleiding
 De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd "Cowboy" in Unity's ML-Agents, die wordt getraind met behulp van het Proximal Policy Optimization (PPO) algoritme. Hier is een korte uitleg van de belangrijkste hyperparameters die in de gegeven configuratie worden gebruikt:
 
 - `batch_size`: Het aantal ervaringen (samples) dat wordt gebruikt om een enkele optimalisatiestap uit te voeren.
@@ -81,6 +81,6 @@ behaviors:
    - Hier de grafiek.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2t.jpg)
 	
-   - Zelf hebben we ook logboeken bijgehouden. Hierbij wordt het aantal keren dat we hebben getest vastgelegd. Rood staat voor de juiste target, groen staat voor de vriendelijke target, en FOUT betekent dat     er geen van beide is geraakt. Hieruit kunnen we direct zien dat de agent een 50/50 kans neemt, omdat hij na verloop van tijd alleen naar rechts kijkt, waar hij een kans van 50% heeft.
+   - Zelf hebben we ook logboeken bijgehouden. Hierbij wordt het aantal keren dat we hebben getest vastgelegd. Rood staat voor de juiste target, groen staat voor de vriendelijke target, en FOUT betekent dat       er geen van beide is geraakt. Hieruit kunnen we direct zien dat de agent een 50/50 kans neemt, omdat hij na verloop van tijd alleen naar rechts kijkt, waar hij een kans van 50% heeft.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_1.jpg)
    
