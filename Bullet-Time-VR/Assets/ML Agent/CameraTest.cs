@@ -3,90 +3,83 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public enum direction
-{
-    links = 0,
-    rechts = 1,
-    center = 2
-}
-public enum kleur
-{
-    groen = 0,
-    rood = 1
-}
+
 public class CameraTest : Agent
 {
-    public GameObject Friendly;
-    public GameObject Target;
-    public GameObject Friendly_F;
-    public GameObject Target_F;
 
-    Rigidbody m_AgentRb;
-    int m_Selection;
-    int goalPos;
-    kleur selectedKleur;
-    StatsRecorder m_statsRecorder;
+    public enum direction
+    {
+        links = 0,
+        rechts = 1,
+        center = 2
+    }
+    public enum kleur
+    {
+        groen = 0,
+        rood = 1
+    }
+
+    //Game objecten
+    public GameObject Groen;
+    public GameObject Rood;
+    public GameObject Groen_vb;
+    public GameObject Rood_vb;
+
+    kleur CurrentColor;
 
     public shoot shootScript;
     bool shot = false;
-   // string direction = "C";
+    bool turned = false;
+
     direction lookAt;
     direction positionGroen;
     direction positionRood;
-    Vector3 links;
-    Vector3 rechts;
+    Vector3 links = new Vector3(2f, 1f, -4f) ;
+    Vector3 rechts = new Vector3(-2f, 1f, -4f);
 
     public override void Initialize()
     {
-        m_AgentRb = GetComponent<Rigidbody>();
-        m_statsRecorder = Academy.Instance.StatsRecorder;
-        links = new Vector3(2f, 1f, -4f);
-        rechts = new Vector3(-2f, 1f, -4f);
-        Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
-        Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
+        Groen_vb.transform.localPosition = new Vector3(0f, 1f, 10f);
+        Rood_vb.transform.localPosition = new Vector3(0f, 1f, 10f);
     }
 
     public override void OnEpisodeBegin()
     {
         shot = false;
-        //  direction = "C";
-        lookAt = direction.center;
-        Friendly.SetActive(true);
-        Target.SetActive(true);
+        turned = false;
 
-        m_Selection = Random.Range(0, 2);
-        if (m_Selection == 0)
+        lookAt = direction.center;
+        transform.localPosition = new Vector3(0f, 1f, 7f);
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+        int GreenLeft = Random.Range(0, 2);
+        if (GreenLeft == 0)
         {
-            Friendly.transform.localPosition = rechts;//friendly is groen
-            Target.transform.localPosition = links;
+            Groen.transform.localPosition = rechts;
             positionGroen = direction.rechts;
+            Rood.transform.localPosition = links;
             positionRood = direction.links;
         }
         else
         {
-            Friendly.transform.localPosition = links;
-            Target.transform.localPosition = rechts;
+            Groen.transform.localPosition = links;
             positionGroen = direction.links;
+            Rood.transform.localPosition = rechts;
             positionRood = direction.rechts;
         }
 
-        transform.localPosition = new Vector3(0f, 1f, 7f);
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-
-
-        goalPos = Random.Range(0, 2);
-        //goalPos = 0;
-        if (goalPos == 0)//Groen aan
+        int rndColor = Random.Range(0, 2);
+        if (rndColor == 0)//Groen aan
         {
-            selectedKleur = kleur.groen;
-            Friendly_F.SetActive(true); //Groen           
-            Target_F.SetActive(false);  //Rood           
+            CurrentColor = kleur.groen;
+            Groen_vb.SetActive(true); //Groen           
+            Rood_vb.SetActive(false);  //Rood           
         }
         else
         {
-            selectedKleur = kleur.rood;
-            Friendly_F.SetActive(false);          
-            Target_F.SetActive(true);           
+            CurrentColor = kleur.rood;
+            Groen_vb.SetActive(false);          
+            Rood_vb.SetActive(true);           
         }
     }
 
@@ -95,6 +88,7 @@ public class CameraTest : Agent
         //sensor.AddObservation(Friendly.transform.localPosition);
         sensor.AddObservation(transform.rotation);
         sensor.AddObservation(shot);
+        sensor.AddObservation(turned);
 
         //sensor.AddObservation(goalPos);
         //sensor.AddObservation(m_Selection);
@@ -109,12 +103,14 @@ public class CameraTest : Agent
             Vector3 newRotation = new Vector3(0, -160, 0);
             transform.eulerAngles = newRotation;
             lookAt = direction.rechts;
+            turned = true;
         }
         else if (rotate == 2 && !shot)  //Left
         {
             Vector3 newRotation = new Vector3(0, 160, 0);
             transform.eulerAngles = newRotation;
             lookAt = direction.links;
+            turned = true;
         }
 
         if (shoot && !shot && lookAt != direction.center)
@@ -122,30 +118,22 @@ public class CameraTest : Agent
             shot = true;
             print("Shoot");
 
-            if (selectedKleur == kleur.groen)
+            if (CurrentColor == kleur.groen)
                 CheckGroen();
 
-            if (selectedKleur == kleur.rood)
+            if (CurrentColor == kleur.rood)
                 CheckRood();
-           
-             //print(m_Selection);
-            //print(goalPos);
-             //print(direction);
+
             print("cummulative: " + GetCumulativeReward());
             EndEpisode();
         }
-        else if (shoot && !shot && lookAt == direction.center)
-        {
-          //AddReward(-0.2f);
-          //print("C");
-        }
+
     }
     private void CheckGroen()
     {
-        print("ik check groen");
+        print("GreenCheck");
         if ( positionGroen == direction.links && lookAt == direction.links)
         {
-            //print("Groen");
             AddReward(1f);
         }
         else if ( positionGroen == direction.rechts && lookAt == direction.rechts)
@@ -159,11 +147,10 @@ public class CameraTest : Agent
     }
     private void CheckRood()
     {
-        print("ik check rood");
+        print("RedCheck");
         
         if (positionRood == direction.links && lookAt == direction.links)  //Rechts
         {
-            //print("Rood");
             AddReward(1f);
         }
         else if(positionRood == direction.rechts  && lookAt == direction.rechts)
@@ -172,7 +159,6 @@ public class CameraTest : Agent
         }
         else
         {
-            //print("FOUT");
             AddReward(-1f);
         }
     }
@@ -182,7 +168,7 @@ public class CameraTest : Agent
     {
         var DiscreteActionsOut = actionsOut.DiscreteActions;
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Space))
         {
             DiscreteActionsOut[0] = 1;
         }

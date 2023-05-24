@@ -2,22 +2,58 @@
     "Cowboy": {
         "checkpoints": [
             {
-                "steps": 47428,
-                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-47428.onnx",
-                "reward": -0.3333333333333333,
-                "creation_time": 1684926458.5917678,
+                "steps": 999943,
+                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-999943.onnx",
+                "reward": null,
+                "creation_time": 1684930099.2433577,
                 "auxillary_file_paths": [
-                    "results\\Cowboy4\\Cowboy\\Cowboy-47428.pt"
+                    "results\\Cowboy4\\Cowboy\\Cowboy-999943.pt"
+                ]
+            },
+            {
+                "steps": 1000007,
+                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-1000007.onnx",
+                "reward": null,
+                "creation_time": 1684930099.3884952,
+                "auxillary_file_paths": [
+                    "results\\Cowboy4\\Cowboy\\Cowboy-1000007.pt"
+                ]
+            },
+            {
+                "steps": 1499995,
+                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-1499995.onnx",
+                "reward": null,
+                "creation_time": 1684944036.3197527,
+                "auxillary_file_paths": [
+                    "results\\Cowboy4\\Cowboy\\Cowboy-1499995.pt"
+                ]
+            },
+            {
+                "steps": 1999962,
+                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-1999962.onnx",
+                "reward": 0.3333333333333333,
+                "creation_time": 1684945180.5651827,
+                "auxillary_file_paths": [
+                    "results\\Cowboy4\\Cowboy\\Cowboy-1999962.pt"
+                ]
+            },
+            {
+                "steps": 2000028,
+                "file_path": "results\\Cowboy4\\Cowboy\\Cowboy-2000028.onnx",
+                "reward": 0.42857142857142855,
+                "creation_time": 1684945180.6882346,
+                "auxillary_file_paths": [
+                    "results\\Cowboy4\\Cowboy\\Cowboy-2000028.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 47428,
+            "steps": 2000028,
             "file_path": "results\\Cowboy4\\Cowboy.onnx",
-            "reward": -0.3333333333333333,
-            "creation_time": 1684926458.5917678,
+            "reward": 0.42857142857142855,
+            "creation_time": 1684945180.6882346,
             "auxillary_file_paths": [
-                "results\\Cowboy4\\Cowboy\\Cowboy-47428.pt"
+                "results\\Cowboy4\\Cowboy\\Cowboy-2000028.pt"
             ]
         }
     },

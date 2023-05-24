@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 5
+    VectorObservationSize: 6
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1421,10 +1421,10 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 4000
-  Friendly: {fileID: 1026746197299445095}
-  Target: {fileID: 1026746196150396417}
-  Friendly_F: {fileID: 1026746196684147380}
-  Target_F: {fileID: 1026746196824437150}
+  Groen: {fileID: 1026746197299445095}
+  Rood: {fileID: 1026746196150396417}
+  Groen_vb: {fileID: 1026746196684147380}
+  Rood_vb: {fileID: 1026746196824437150}
   shootScript: {fileID: 1026746195887513317}
 --- !u!114 &1026746196721133212
 MonoBehaviour:
