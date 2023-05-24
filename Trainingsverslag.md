@@ -69,7 +69,7 @@ behaviors:
 
 3. Grafieken:
    - We zijn begonnen met het herkennen van kleuren aan de hand van een camera.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2.jpg)
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
 
    - Dit gaf redelijk snel positieve resultaten.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
