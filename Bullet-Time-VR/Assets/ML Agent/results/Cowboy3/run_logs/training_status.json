@@ -2,22 +2,40 @@
     "Cowboy": {
         "checkpoints": [
             {
-                "steps": 347245,
-                "file_path": "results\\Cowboy3\\Cowboy\\Cowboy-347245.onnx",
-                "reward": -0.6666666666666666,
-                "creation_time": 1684874259.4711444,
+                "steps": 499940,
+                "file_path": "results\\Cowboy3\\Cowboy\\Cowboy-499940.onnx",
+                "reward": 0.0,
+                "creation_time": 1684923980.9357712,
                 "auxillary_file_paths": [
-                    "results\\Cowboy3\\Cowboy\\Cowboy-347245.pt"
+                    "results\\Cowboy3\\Cowboy\\Cowboy-499940.pt"
+                ]
+            },
+            {
+                "steps": 999994,
+                "file_path": "results\\Cowboy3\\Cowboy\\Cowboy-999994.onnx",
+                "reward": 1.0,
+                "creation_time": 1684925234.4828303,
+                "auxillary_file_paths": [
+                    "results\\Cowboy3\\Cowboy\\Cowboy-999994.pt"
+                ]
+            },
+            {
+                "steps": 1000084,
+                "file_path": "results\\Cowboy3\\Cowboy\\Cowboy-1000084.onnx",
+                "reward": 0.5,
+                "creation_time": 1684925234.6208322,
+                "auxillary_file_paths": [
+                    "results\\Cowboy3\\Cowboy\\Cowboy-1000084.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 347245,
+            "steps": 1000084,
             "file_path": "results\\Cowboy3\\Cowboy.onnx",
-            "reward": -0.6666666666666666,
-            "creation_time": 1684874259.4711444,
+            "reward": 0.5,
+            "creation_time": 1684925234.6208322,
             "auxillary_file_paths": [
-                "results\\Cowboy3\\Cowboy\\Cowboy-347245.pt"
+                "results\\Cowboy3\\Cowboy\\Cowboy-1000084.pt"
             ]
         }
     },

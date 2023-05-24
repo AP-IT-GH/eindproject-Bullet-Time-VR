@@ -1,9 +1,19 @@
-using System.Collections;
-using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEngine;
 
+public enum direction
+{
+    links = 0,
+    rechts = 1,
+    center = 2
+}
+public enum kleur
+{
+    groen = 0,
+    rood = 1
+}
 public class CameraTest : Agent
 {
     public GameObject Friendly;
@@ -14,35 +24,50 @@ public class CameraTest : Agent
     Rigidbody m_AgentRb;
     int m_Selection;
     int goalPos;
+    kleur selectedKleur;
     StatsRecorder m_statsRecorder;
 
     public shoot shootScript;
     bool shot = false;
-    string direction = "C";
+   // string direction = "C";
+    direction lookAt;
+    direction positionGroen;
+    direction positionRood;
+    Vector3 links;
+    Vector3 rechts;
 
     public override void Initialize()
     {
         m_AgentRb = GetComponent<Rigidbody>();
         m_statsRecorder = Academy.Instance.StatsRecorder;
+        links = new Vector3(2f, 1f, -4f);
+        rechts = new Vector3(-2f, 1f, -4f);
+        Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
+        Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
     }
 
     public override void OnEpisodeBegin()
     {
         shot = false;
-        direction = "C";
+        //  direction = "C";
+        lookAt = direction.center;
         Friendly.SetActive(true);
         Target.SetActive(true);
 
         m_Selection = Random.Range(0, 2);
         if (m_Selection == 0)
         {
-            Friendly.transform.localPosition = new Vector3(2f, 1f, -4f);
-            Target.transform.localPosition = new Vector3(-2f, 1f, -4f);
+            Friendly.transform.localPosition = rechts;//friendly is groen
+            Target.transform.localPosition = links;
+            positionGroen = direction.rechts;
+            positionRood = direction.links;
         }
         else
         {
-            Friendly.transform.localPosition = new Vector3(-2f, 1f, -4f);
-            Target.transform.localPosition = new Vector3(2f, 1f, -4f);
+            Friendly.transform.localPosition = links;
+            Target.transform.localPosition = rechts;
+            positionGroen = direction.links;
+            positionRood = direction.rechts;
         }
 
         transform.localPosition = new Vector3(0f, 1f, 7f);
@@ -53,17 +78,15 @@ public class CameraTest : Agent
         //goalPos = 0;
         if (goalPos == 0)//Groen aan
         {
-            Friendly_F.SetActive(false); //Groen
-            Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
-            Target_F.SetActive(false);  //Rood
-            Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
+            selectedKleur = kleur.groen;
+            Friendly_F.SetActive(true); //Groen           
+            Target_F.SetActive(false);  //Rood           
         }
         else
         {
-            Friendly_F.SetActive(false);
-            Friendly_F.transform.localPosition = new Vector3(0f, 1f, 10f);
-            Target_F.SetActive(false);
-            Target_F.transform.localPosition = new Vector3(0f, 1f, 10f);
+            selectedKleur = kleur.rood;
+            Friendly_F.SetActive(false);          
+            Target_F.SetActive(true);           
         }
     }
 
@@ -73,7 +96,7 @@ public class CameraTest : Agent
         sensor.AddObservation(transform.rotation);
         sensor.AddObservation(shot);
 
-        sensor.AddObservation(goalPos);
+        //sensor.AddObservation(goalPos);
         //sensor.AddObservation(m_Selection);
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -85,45 +108,72 @@ public class CameraTest : Agent
         if (rotate == 1 && !shot) {    //Right
             Vector3 newRotation = new Vector3(0, -160, 0);
             transform.eulerAngles = newRotation;
-            direction = "R";
+            lookAt = direction.rechts;
         }
         else if (rotate == 2 && !shot)  //Left
         {
             Vector3 newRotation = new Vector3(0, 160, 0);
             transform.eulerAngles = newRotation;
-            direction = "L";
+            lookAt = direction.links;
         }
 
-        if (shoot && !shot && direction != "C")
+        if (shoot && !shot && lookAt != direction.center)
         {
             shot = true;
             print("Shoot");
-            //GoalPos 0 = groen
-            //Mselection 0 = groen L rood R
-            if ((goalPos == 0 && m_Selection == 0 && direction == "L") || (m_Selection == 1 && goalPos == 0 && direction == "R"))
-            {
-                print("Groen");
-                AddReward(1f);
-            }
-            else if ((m_Selection == 1 && goalPos == 1 && direction == "L") || (m_Selection == 0 && goalPos == 1 && direction == "R"))  //Rechts
-            {
-                print("Rood");
-                AddReward(1f);
-            }
-            else
-            {
-                print("FOUT");
-                AddReward(-1f);
-            }
-            // print(m_Selection);
+
+            if (selectedKleur == kleur.groen)
+                CheckGroen();
+
+            if (selectedKleur == kleur.rood)
+                CheckRood();
+           
+             //print(m_Selection);
             //print(goalPos);
-            // print(direction);
+             //print(direction);
+            print("cummulative: " + GetCumulativeReward());
             EndEpisode();
         }
-        else if (shoot && !shot && direction == "C")
+        else if (shoot && !shot && lookAt == direction.center)
         {
-          SetReward(-0.2f);
-          print("C");
+          //AddReward(-0.2f);
+          //print("C");
+        }
+    }
+    private void CheckGroen()
+    {
+        print("ik check groen");
+        if ( positionGroen == direction.links && lookAt == direction.links)
+        {
+            //print("Groen");
+            AddReward(1f);
+        }
+        else if ( positionGroen == direction.rechts && lookAt == direction.rechts)
+        {
+            AddReward(1f);
+        }
+        else
+        {
+            AddReward(-1f);
+        }
+    }
+    private void CheckRood()
+    {
+        print("ik check rood");
+        
+        if (positionRood == direction.links && lookAt == direction.links)  //Rechts
+        {
+            //print("Rood");
+            AddReward(1f);
+        }
+        else if(positionRood == direction.rechts  && lookAt == direction.rechts)
+        {
+            AddReward(1f);
+        }
+        else
+        {
+            //print("FOUT");
+            AddReward(-1f);
         }
     }
 
