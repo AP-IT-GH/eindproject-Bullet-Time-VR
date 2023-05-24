@@ -56,7 +56,6 @@ behaviors:
    - Hier de grafiek.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2t.jpg)
 	
-   - Zelf hadden wij ook nog eens gelogged. Waarbij shoot het aantal keren da we testen, rood is de juiste target, groen is de friendly target en FOUT is op geen van beide.
-     Hier zien we meteen dat de agent 50/50 kans pakt omdat hij na een tijd enkel naar rechts kijkt omdat hij daar 50% kans heeft.
+   - Zelf hadden wij ook nog eens gelogged. Waarbij shoot het aantal keren da we testen, rood is de juiste target, groen is de friendly target en FOUT is op geen van beide. Hier zien we meteen dat de agent           50/50 kans pakt omdat hij na een tijd enkel naar rechts kijkt omdat hij daar 50% kans heeft.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_1.jpg)
    
