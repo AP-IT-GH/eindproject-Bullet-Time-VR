@@ -99,7 +99,7 @@ public class shoot : MonoBehaviour
     {
         Debug.Log("reloading");
         isReloading = true;
-        ReloadClip.Play();
+        //ReloadClip.Play();
 
         yield return new WaitForSeconds(reloadTime - .25f);
         yield return new WaitForSeconds(.25f);
