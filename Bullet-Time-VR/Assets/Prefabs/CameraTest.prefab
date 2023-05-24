@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 1026746196150396418}
   - component: {fileID: 1026746196150396419}
   - component: {fileID: 1026746196150396416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 1026746196684147377}
   - component: {fileID: 1026746196684147382}
   - component: {fileID: 1026746196684147383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Friendly_F
   m_TagString: Friendly
   m_Icon: {fileID: 0}
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 5
+    VectorObservationSize: 6
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Height: 32
   m_Grayscale: 0
   m_ObservationType: 0
-  m_ObservationStacks: 4
+  m_ObservationStacks: 1
   m_Compression: 1
 --- !u!114 &2037347323
 MonoBehaviour:
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_RayLength: 20
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 8
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 1026746196824437147}
   - component: {fileID: 1026746196824437144}
   - component: {fileID: 1026746196824437145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target_F
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -2235,7 +2235,7 @@ GameObject:
   - component: {fileID: 1026746197299445088}
   - component: {fileID: 1026746197299445089}
   - component: {fileID: 1026746197299445094}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Friendly
   m_TagString: Friendly
   m_Icon: {fileID: 0}
