@@ -37,9 +37,25 @@ behaviors:
 
 
 2. Beloningen/straffen
-   - Correcte target = +1
-   - Foute target = -1
-   - Schieten vanuit de startpositie = -0.2
+   - Correcte target (de target die wij laten zien voor het geheugen) = +1
+   - Foute target (de friendly die de agent moet vermijden) = -1
+   - Schieten vanuit de startpositie (op geen van beide, willekeurig) = -0.2
 
 
 3. Grafieken
+   - We zijn begonnen met het herkennen van kleuren aan de hand van een camera.
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2.jpg)
+
+   - Dit gaf redelijk snel positieve resultaten.
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
+
+
+   - Vervolgens hebben wij hier het geheugen aan toegevoegd, dit zorgde voor wat tegenslag.
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
+
+   - Hieronder de grafiek.
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2t.jpg)
+	
+   - Zelf hadden wij ook nog eens gelogged
+   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_1.jpg)
+   
