@@ -19,7 +19,14 @@ public class GameManager : MonoBehaviour
     public GameObject Agent;
     public FinaalCameraAgent AgentScript;
     private bool gameActive = false;
-    
+
+
+
+
+    // Countdown things
+    public float countdownDuration = 3f; // Duration of the countdown in seconds
+    private float countdownTimer; // Timer for the countdown
+
 
 
     // Start is called before the first frame update
@@ -28,10 +35,37 @@ public class GameManager : MonoBehaviour
         Agent.SetActive(false);
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         CheckWhoWon();
+        CountDown();
+    }
+
+    public void StartCountdown()
+    {
+        countdownTimer = countdownDuration;
+    }
+
+
+
+    private void CountDown() {
+
+        if (countdownTimer > 0f)
+        {
+            countdownTimer -= Time.deltaTime;
+            print(countdownTimer);
+
+            if (countdownTimer <= 0f)
+            {
+                StartGame();
+            }
+        }
+
+
+
     }
 
     public void StartGame()

@@ -6028,11 +6028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5427789850512735016, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5427789850512735016, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.811817
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 5427789850512735016, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6066,6 +6066,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: YAY
       objectReference: {fileID: 0}
+    - target: {fileID: 5427789850588164599, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427789850818562278, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5427789851203976334, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -6074,6 +6082,18 @@ PrefabInstance:
       propertyPath: shootScript
       value: 
       objectReference: {fileID: 1996951488}
+    - target: {fileID: 5427789851531348997, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427789852114164106, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427789852354357592, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
 --- !u!1001 &730012739
