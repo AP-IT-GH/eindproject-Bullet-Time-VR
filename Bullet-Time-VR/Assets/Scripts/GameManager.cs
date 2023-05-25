@@ -9,17 +9,15 @@ public class GameManager : MonoBehaviour
 
 
     public List<Vector3> spawnPositions = new List<Vector3>(); // Lijst van mogelijke spawn posities
-    public Vector3 TargetExamplePosition;
     public List<GameObject> people = new List<GameObject>(); // Lijst van allemaal mensen die kunnen spelen
-    private GameObject currentTarget; // Is elke keer een andere target
+    public GameObject currentTarget; // Is elke keer een andere target
 
-    public GameObject gunPlayer; // VR Player Gun
-    public GameObject gunAgent; // ML Agent Gun
+    public GameObject VRPlayer; // VR Player Gun
     public shoot shootScriptPlayer;
     public shoot shootScriptAgent;
 
     public GameObject Agent;
-
+    public FinaalCameraAgent AgentScript;
     private bool gameActive = false;
     
 
@@ -27,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Agent.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,12 +34,12 @@ public class GameManager : MonoBehaviour
         CheckWhoWon();
     }
 
-    void StartGame()
+    public void StartGame()
     {
 
-        ChooseTarget();
+        //ChooseTarget();
         PlaceTargetAndFriendy();
-        SpawnCopyOfTarget();
+        //SpawnCopyOfTarget();
         ResetGame(); // Reset rotation
 
 
@@ -60,8 +58,11 @@ public class GameManager : MonoBehaviour
     {
 
         // Rotate Player and ML to start position
-        gunPlayer.transform.localRotation = new Quaternion(0, 180, 0, 0);
-        gunAgent.transform.localRotation = new Quaternion(0, 180, 0, 0);
+        VRPlayer.transform.localRotation = new Quaternion(0, 180, 0, 0);
+        Agent.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        AgentScript.Reset();
+
+
 
         // Reset which tag they last hit
         shootScriptPlayer.ResetHitTag();
@@ -113,12 +114,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void ChooseTarget()
-    {
+    //private void ChooseTarget()
+    //{
 
-        GameObject currentTarget = people[Random.Range(0, people.Count)]; // Kiest een random target, van de lijst van personen
+    //    GameObject currentTarget = people[Random.Range(0, people.Count)]; // Kiest een random target, van de lijst van personen
 
-    }
+    //}
 
 
 
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        for (int i =0; i< people.Count; i++) // Give the people the random spawn position
+        for (int i = 0; i < people.Count; i++) // Give the people the random spawn position
         {
 
             people[i].transform.localPosition = randomSpawnPositions[i];
@@ -149,8 +150,8 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void SpawnCopyOfTarget()
-    {
-        currentTarget.transform.localPosition = TargetExamplePosition;
-    }
+    //private void SpawnCopyOfTarget()
+    //{
+    //    currentTarget.transform.localPosition = TargetExamplePosition;
+    //}
 }
