@@ -33,27 +33,27 @@ public class FinaalCameraAgent : Agent
     public float stepSize = 5f;
 
 
-    public override void OnEpisodeBegin()
-    {
-        shot = false;
+    //public override void OnEpisodeBegin()
+    //{
+    //    shot = false;
 
-        transform.localPosition = new Vector3(0f, 1f, 7f);
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        rotation = 0f;
+    //    transform.localPosition = new Vector3(0f, 1f, 7f);
+    //    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+    //    rotation = 0f;
 
-        int GreenLeft = Random.Range(0, 2);
-        if (GreenLeft == 0)
-        {
-            Groen.transform.localPosition = rechts;
-            Rood.transform.localPosition = links;
-        }
-        else
-        {
-            Groen.transform.localPosition = links;
-            Rood.transform.localPosition = rechts;
-        }
+    //    int GreenLeft = Random.Range(0, 2);
+    //    if (GreenLeft == 0)
+    //    {
+    //        Groen.transform.localPosition = rechts;
+    //        Rood.transform.localPosition = links;
+    //    }
+    //    else
+    //    {
+    //        Groen.transform.localPosition = links;
+    //        Rood.transform.localPosition = rechts;
+    //    }
 
-    }
+    //}
 
     public override void CollectObservations(VectorSensor sensor)
     {
