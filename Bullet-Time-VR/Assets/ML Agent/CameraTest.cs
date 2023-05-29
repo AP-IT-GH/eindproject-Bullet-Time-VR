@@ -88,7 +88,7 @@ public class CameraTest : Agent
         //sensor.AddObservation(Friendly.transform.localPosition);
         sensor.AddObservation(transform.rotation);
         sensor.AddObservation(shot);
-        sensor.AddObservation(turned);
+        //sensor.AddObservation(turned);
 
         //sensor.AddObservation(goalPos);
         //sensor.AddObservation(m_Selection);

@@ -1146,7 +1146,9 @@ MonoBehaviour:
   MaxStep: 4000
   Groen: {fileID: 5427789850641459055}
   Rood: {fileID: 5427789851774123017}
-  shootScript: {fileID: 0}
+  shootScript: {fileID: 5427789852037580013}
+  rotationSpeed: 20
+  stepSize: 5
 --- !u!114 &5427789851203976340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,8 +1163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 5427789852436791679}
   m_SensorName: CameraSensor
-  m_Width: 32
-  m_Height: 32
+  m_Width: 48
+  m_Height: 48
   m_Grayscale: 0
   m_ObservationType: 0
   m_ObservationStacks: 1
@@ -1183,15 +1185,15 @@ MonoBehaviour:
     VectorObservationSize: 5
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 0200000003000000
-    VectorActionSize: 0200000003000000
+      m_NumContinuousActions: 1
+      BranchSizes: 02000000
+    VectorActionSize: 
     VectorActionDescriptions: []
-    VectorActionSpaceType: 0
+    VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: b605251d4ee37b24f9f1fc21161dfa73, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 2
+  m_BehaviorType: 0
   m_BehaviorName: Cowboy
   TeamId: 0
   m_UseChildSensors: 1
