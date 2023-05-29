@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -24,8 +28,12 @@ public class GameManager : MonoBehaviour
 
 
     // Countdown things
+    public TextMeshProUGUI countDownUIText;
     public float countdownDuration = 3f; // Duration of the countdown in seconds
     private float countdownTimer; // Timer for the countdown
+
+
+    private string who_won = null;
 
 
 
@@ -57,9 +65,11 @@ public class GameManager : MonoBehaviour
         {
             countdownTimer -= Time.deltaTime;
             print(countdownTimer);
+            countDownUIText.text = (countdownTimer).ToString("0"); ;
 
             if (countdownTimer <= 0f)
             {
+                countDownUIText.text = "";
                 StartGame();
             }
         }
@@ -72,9 +82,9 @@ public class GameManager : MonoBehaviour
     {
 
         //ChooseTarget();
-        PlaceTargetAndFriendy();
+        //PlaceTargetAndFriendy();
         //SpawnCopyOfTarget();
-        ResetGame(); // Reset rotation
+        //ResetGame(); // Reset rotation
 
 
 
@@ -88,13 +98,22 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void ResetGame()
+    public void ResetGame()
     {
+
+
+        // Plaats Enemy en Friendly
+        PlaceTargetAndFriendy();
 
         // Rotate Player and ML to start position
         VRPlayer.transform.localRotation = new Quaternion(0, 180, 0, 0);
         Agent.transform.localRotation = new Quaternion(0, 0, 0, 0);
+
+        // Reset ML Agent
         AgentScript.Reset();
+
+        // Reset who won
+        who_won = null;
 
 
 
@@ -113,11 +132,11 @@ public class GameManager : MonoBehaviour
         
 
 
-    void EndGame(string winner = null)
+    void EndGame()
     {
 
 
-        print("The winner is: " + winner);
+        print("The winner is: " + who_won);
         gameActive = false;
 
         Agent.SetActive(false);
@@ -132,20 +151,30 @@ public class GameManager : MonoBehaviour
         if (gameActive)
         {
             if (shootScriptPlayer.CheckHitTag() == currentTarget.tag) {
-                EndGame("You win");
+
+                who_won = "You won";
+                Invoke("EndGame", 0.2f);
+
+                
 
 
             } else if (shootScriptAgent.CheckHitTag() == currentTarget.tag)
             {
-                EndGame("AI Won");
+                who_won = "AI won";
+                Invoke("EndGame", 0.2f);
 
             } else if (shootScriptPlayer.CheckHitTag() != null && shootScriptAgent.CheckHitTag() != null)
             {
-                EndGame("No one");
+                who_won = "No one";
+                Invoke("EndGame", 0.2f);
             }
         }
 
     }
+
+
+
+
 
 
     //private void ChooseTarget()
