@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     private bool gameActive = false;
 
 
+    // UI 
+    public GameObject wonUI;
+    public GameObject lostUI;
+    public GameObject bothLostUI;
+
 
 
     // Countdown things
@@ -73,28 +78,12 @@ public class GameManager : MonoBehaviour
                 StartGame();
             }
         }
-
-
-
     }
 
     public void StartGame()
     {
-
-        //ChooseTarget();
-        //PlaceTargetAndFriendy();
-        //SpawnCopyOfTarget();
-        //ResetGame(); // Reset rotation
-
-
-
-
         gameActive = true;
         Agent.SetActive(true);
-
-
-
-
 
     }
 
@@ -115,13 +104,9 @@ public class GameManager : MonoBehaviour
         // Reset who won
         who_won = null;
 
-
-
         // Reset which tag they last hit
         shootScriptPlayer.ResetHitTag();
         shootScriptAgent.ResetHitTag();
-
-
 
     }
 
@@ -134,15 +119,11 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-
-
         print("The winner is: " + who_won);
         gameActive = false;
 
         Agent.SetActive(false);
         // Freez ML Agent
-
-
     }
 
     void CheckWhoWon()
@@ -154,36 +135,22 @@ public class GameManager : MonoBehaviour
 
                 who_won = "You won";
                 Invoke("EndGame", 0.2f);
-
-                
-
-
+                wonUI.SetActive(true);
             } else if (shootScriptAgent.CheckHitTag() == currentTarget.tag)
             {
                 who_won = "AI won";
                 Invoke("EndGame", 0.2f);
+                lostUI.SetActive(true);
 
             } else if (shootScriptPlayer.CheckHitTag() != null && shootScriptAgent.CheckHitTag() != null)
             {
                 who_won = "No one";
                 Invoke("EndGame", 0.2f);
+                bothLostUI.SetActive(true);
             }
         }
 
     }
-
-
-
-
-
-
-    //private void ChooseTarget()
-    //{
-
-    //    GameObject currentTarget = people[Random.Range(0, people.Count)]; // Kiest een random target, van de lijst van personen
-
-    //}
-
 
 
     private void PlaceTargetAndFriendy() // Spawn alle personen (+ target) op een random positie (die in de spawn points zitten)
@@ -212,9 +179,4 @@ public class GameManager : MonoBehaviour
 
     }
 
-
-    //private void SpawnCopyOfTarget()
-    //{
-    //    currentTarget.transform.localPosition = TargetExamplePosition;
-    //}
 }
