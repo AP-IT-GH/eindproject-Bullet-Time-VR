@@ -136,3 +136,8 @@ Het gebruik van geheugen in een AI-agent kan verschillende voordelen bieden, zoa
 We hebben vastgesteld dat de implementatie van het geheugen in onze agent leidde tot technische complicaties en ongewenste resultaten. Het had een negatieve invloed op de algehele prestaties en speelbaarheid van het spel. We hebben de moeilijkheid ervaren om het geheugen effectief te integreren in de VR-omgeving en het spelveld, waardoor de ervaring voor spelers minder bevredigend werd.
 
 Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig kan zijn, hebben we besloten om deze functie niet te gebruiken in onze huidige toepassing. We zijn nog steeds tevreden met hoe onze AI-agent functioneert zonder het geheugen en geloven dat het spel een aantrekkelijke uitdaging biedt aan spelers.
+
+## Bronvermelding
+1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
+2. Unity Technologies, (2022). Training Configuration File. https://unity-technologies.github.io/ml-agents/Training-Configuration-File/#memory-enhanced-agents-using-recurrent-neural-networks
+3. 
