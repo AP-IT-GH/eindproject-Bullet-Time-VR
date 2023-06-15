@@ -203,14 +203,26 @@ behaviors:
 Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
 
 ### Trainingen
+We hebben de ML-Agent in stappen geprogrameerd zodat we altijd iets hadden om te presenteren indien een volgende stap niet zou werken.
 
 #### Kleuren herkennen a.d.h.v. een camera
-
 We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 
-#### Kleuren onthouden a.d.h.v. een camera en geheugen
+- Werking
+- Beloningen/straffen
+- Test opstelling
+- Grafieken
+- Conclusie
 
+#### Kleuren onthouden a.d.h.v. een camera en geheugen
 In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
+
+
+- Werking
+- Beloningen/straffen
+- Test opstelling
+- Grafieken
+- Conclusie
 
 ## Conclusie
 
