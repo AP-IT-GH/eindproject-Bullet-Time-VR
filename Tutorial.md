@@ -209,7 +209,7 @@ We hebben de ML-Agent in stappen geprogrameerd zodat we altijd iets hadden om te
 We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 
 - Werking
-	1. Als eerste hebben we een agent gemaakt die 2 actie's kan uitvoeren. Deze kan schieten en heeft de keuze om link/rechts te draaien. Bij het draaien zal de hoek naarwaar de agent kijkt worden aangepast naar 1 van de 2 kleuren. (2 discrete actions) Als de agent naar de kleur groen kijkt en schiet heeft hij gewonnen. De kleur groen en rood veranderen van positie zodat de agent de kleur moet herkennen en niet zijn rotatie kan onthouden. De observaties dat de agent mee krijgt zijn de rotatie en of hij heeft geschoten of niet.
+	1. Als eerste hebben we een agent gemaakt die 2 actie's kan uitvoeren. Deze kan schieten en heeft de keuze om link/rechts te draaien. Bij het draaien zal de hoek naarwaar de agent kijkt worden aangepast naar 1 van de 2 kleuren. (2 discrete actions) Als de agent naar de kleur groen kijkt en schiet heeft hij gewonnen. De kleur groen en rood veranderen van positie zodat de agent de kleur moet herkennen en niet zijn rotatie kan onthouden. De observaties dat de agent mee krijgt zijn de rotatie en of hij heeft geschoten of niet. Ook heeft de agent de camera sensor met een widh en height van 48x48.
 	2. Als tweede hebben we de agent de mogelijkheid gegeven om deze vrij te laten ronddraaien. (1 discrete action en 1 continuous action)
 - Beloningen/straffen
 	- Correcte kleur beschoten = AddReward(1)
@@ -223,7 +223,7 @@ We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 	3. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
 		- Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. De grafiek heeft ook een linear verband.
 - Conclusie
-
+	- Het trainen van de agent met de camera verliep zeer vlot. De agent had snel door welke acties hij moest uitvoeren om een goede beloning te ontvangen.
 
 #### Kleuren onthouden a.d.h.v. een camera en geheugen
 In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
