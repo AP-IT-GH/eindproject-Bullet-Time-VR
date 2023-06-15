@@ -12,13 +12,13 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 1. Begin met je omgeving te creeren dit bevat volgende zaken
 
    - Uw targets, ML Agent en friendly.
-   - Importeer alle packeges (ML Agents en XR rig).
+   - Importeer alle packages (ML Agents en XR rig).
    - Importeer de nodige assets die je wilt gebruiken.
 
 2. Design een map
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/MAP.JPG)
 
-   - We hebben een pack geimporteerd van verschillende huizen en hiermee onze eigen omgeving gecreeerd.
+   - We hebben een pack geïmporteerd van verschillende huizen en hiermee onze eigen omgeving gecreëerd.
      https://himmelfar.itch.io/low-poly-western-town
 
    Assets:
