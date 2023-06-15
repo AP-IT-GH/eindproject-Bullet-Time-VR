@@ -152,7 +152,39 @@ De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd
 
 Dit zijn slechts enkele van de hyperparameters die kunnen worden aangepast in het trainingsproces van een ML-Agent in Unity. Door deze waarden aan te passen, kun je het leergedrag van de agent beïnvloeden en optimaliseren voor het specifieke probleem of de taak die je wilt oplossen.
 
-Onze trainings file kan u terug vinden op volgende (link)[https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml].
+**Hyper parameters**
+```
+behaviors:
+  Cowboy:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 128
+      buffer_size: 1024
+      learning_rate: 0.0003
+      beta: 0.03
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+      memory:
+        sequence_length: 64
+        memory_size: 128
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: true
+```
+Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
 
 ### Kleuren herkennen a.d.h.v. een camera
 
