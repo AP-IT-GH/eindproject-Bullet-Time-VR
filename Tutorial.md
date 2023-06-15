@@ -186,10 +186,12 @@ behaviors:
 ```
 Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
 
-### Kleuren herkennen a.d.h.v. een camera
+### Trainingen
+#### Kleuren herkennen a.d.h.v. een camera
+We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 
-### Kleuren onthouden a.d.h.v. een camera en geheugen
-
+#### Kleuren onthouden a.d.h.v. een camera en geheugen
+In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
 
 ## Conclusie
 Ons westernspel is ontworpen om spelers uit te dagen om zo snel mogelijk een doelwit te raken, terwijl ze het opnemen tegen een AI-tegenstander. We hebben ons best gedaan om ervoor te zorgen dat het spel zowel speelbaar als eerlijk is, zodat spelers een leuke en uitdagende ervaring hebben.
