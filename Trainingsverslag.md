@@ -1,4 +1,4 @@
-## Trainings verslag
+# Trainings verslag
 #### In het volgende document bespreken we hoe de training is verlopen. We behandelen de volgende onderwerpen: Hyperparameters, beloningen/straffen en we bespreken de grafieken.
 
 ##### Inleiding
@@ -26,54 +26,65 @@ De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd
 
 Dit zijn slechts enkele van de hyperparameters die kunnen worden aangepast in het trainingsproces van een ML-Agent in Unity. Door deze waarden aan te passen, kun je het leergedrag van de agent beïnvloeden en optimaliseren voor het specifieke probleem of de taak die je wilt oplossen.
 
-1. Hyper parameters:
+## Hyper parameters:
 ```
 behaviors:
   Cowboy:
     trainer_type: ppo
     hyperparameters:
       batch_size: 128
-      buffer_size: 2048
+      buffer_size: 1024
       learning_rate: 0.0003
-      beta: 0.005
+      beta: 0.03
       epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
       learning_rate_schedule: linear
     network_settings:
       normalize: false
-      hidden_units: 256
+      hidden_units: 128
       num_layers: 2
       vis_encode_type: simple
-      user_recurrent: true
       memory:
         sequence_length: 64
-        memory_size: 256
+        memory_size: 128
     reward_signals:
       extrinsic:
         gamma: 0.99
         strength: 1.0
     keep_checkpoints: 5
-    max_steps: 1000000
+    max_steps: 10000000
     time_horizon: 64
     summary_freq: 10000
     threaded: true
 ```
+## Trainingen
+
+### Kleuren herkennen aan de hand van een camera
+Als eerste opstelling hebben we ervoor gekozen om enkel de camera te gebruiken om kleueren te herkennen.
+
+- Werking
+	- We maken een map waarin er 1 agent staat met daarbij 2 verschillende kleuren. Deze 2 verschillende kleur objecten kunnen random van positie veranderen.
+	- De agent kan 2 acties uitvoeren. Deze acties zijn beide discrete actions.
+		- Links/rechts draaien. Hierbij kan de agent kiezen of hij naar rood of groen kijkt.
+		- Schieten. Hiermet kan de agent bevestigen dat hij een bepaalde kleur selecteert.
+	- We geven 2 observaties mee aan de agent
+		- Zijn eigen rotatie.
+		- Of er geschoten is.
+- Beloningen/straffen:
+	- Correcte kleur aangeduid = AddReward(1)
+	- Niet de juiste kleur en/of muur = AddReward(-1)
+- Grafieken:
+	- Trainings veld om klueren te herkennen.
+	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
+	- Grafiek tensor bord i.v.m. kleuren herkennen.
+	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
+- Besluit:
+	- De agent leerde snel dat hij een beloning kreeg door op de kleur groen te schieten. Op het tensor bord is er te zien dat reward in een lineare lijn ligt. Ook heeft de agent na 80k stappen al een reward van bijna 1. Als we het uiteindelijke brein gebruiken is er te zien dat deze correct werkt.
+### Kleur onthouden aan de hand van een camera
 
 
-2. Beloningen/straffen:
-   - Correcte target (de target die wij laten zien voor het geheugen) = +1
-   - Foute target (de friendly die de agent moet vermijden) = -1
-   - Schieten vanuit de startpositie (op geen van beide, willekeurig) = -0.2
-
-
-3. Grafieken:
-   - We zijn begonnen met het herkennen van kleuren aan de hand van een camera.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
-
-   - Dit gaf redelijk snel positieve resultaten.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
-
+////////////
 
    - Vervolgens hebben wij hier het geheugen aan toegevoegd, dit zorgde voor wat tegenslag.
    ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
