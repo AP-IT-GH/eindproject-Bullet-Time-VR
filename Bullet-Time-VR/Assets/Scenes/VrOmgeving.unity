@@ -7254,7 +7254,7 @@ PrefabInstance:
       objectReference: {fileID: 1373974054163657975, guid: dc60e545db5be054b8c9c74df3c8bf77, type: 3}
     - target: {fileID: 5427789851203976334, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.281
       objectReference: {fileID: 0}
     - target: {fileID: 5427789851203976341, guid: 6a1ad1d469a53c84ab76d8ec3b2c65ad, type: 3}
       propertyPath: m_Mesh
@@ -10758,7 +10758,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1770215637}
-  m_RootOrder: 104
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1290733142 stripped
 Transform:
@@ -12822,7 +12822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -15457,6 +15457,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1269569530}
+  - {fileID: 1287772917}
   - {fileID: 894561984}
   - {fileID: 1750652124}
   - {fileID: 1948526677}
@@ -15560,7 +15561,6 @@ Transform:
   - {fileID: 1172383423}
   - {fileID: 911937260}
   - {fileID: 1814537591}
-  - {fileID: 1287772917}
   - {fileID: 1773386951}
   - {fileID: 1225219126}
   - {fileID: 1290733142}
