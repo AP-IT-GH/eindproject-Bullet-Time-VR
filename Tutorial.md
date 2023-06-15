@@ -1,20 +1,24 @@
-# Bullet Time VR
+# ML-Agent Gun-Dual Game
 
 Studenten:
+
 1. Niels Aarts
-2. Kevin Lahey 
-3. Gil Struyf 
+2. Kevin Lahey
+3. Gil Struyf
 4. Quinten Moons
 
 ## Een tutorial om ons project te reproduceren
+
 In het onderstaande document wordt onze werkwijze, de gemaakte keuzes en de gebruikte materialen en de vooruitgang besproken.
 
 ### Inleiding
+
 Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd over het doel en de uitdagingen die hen te wachten staan. Zodra de "Start" knop wordt ingedrukt, begint een zinderende countdown en wordt de tegenstander, de AI, geactiveerd. Zodra de tijd begint te tikken, is het aan de spelers en de AI om met precisie en snelheid het juiste doelwit te raken, want falen betekent verlies. Het is essentieel om het juiste doelwit te raken, foutieve doelwitten te vermijden, geen enkel schot te missen en op tijd te schieten. Alleen door sneller en trefzekerder te zijn dan de AI, kan de speler de ultieme overwinning behalen.
 
 ### Samenvatting
 
 ### Werkwijze
+
 1. Begin met je omgeving te creeren dit bevat volgende zaken
 
    - Uw targets, ML Agent en friendly.
@@ -96,37 +100,42 @@ De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schie
    - UI: Een start scherm en reset scherm.
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
 
-
 ## Informatie one-pager
 
 ### Wat is het doel van de VR toepassing
-Een leuke ervaring met als focus op entertainment. 
+
+Een leuke ervaring met als focus op entertainment.
 
 ### Hoe zal de VR wereld er ongeveer uitzien
-Western met dessert thema. Er zullen 2 objecten tevoorschijn komen 1 als target en 1 friendly. 
 
-De agent zal moeten onthouden wie de target is en wie friendly om later te bepalen op wie die moet schieten.  
+Western met dessert thema. Er zullen 2 objecten tevoorschijn komen 1 als target en 1 friendly.
 
-Jij (de speler) en de ML agent worden naast elkaar geplaatst en zullen om ter snelst de target raken. Wie deze als eerst raakt wint de game. 
+De agent zal moeten onthouden wie de target is en wie friendly om later te bepalen op wie die moet schieten.
 
-We kunnen uiteindelijk verschillende agents trainen voor verschillende moeilijkheden. (1 minder trainen en 1 harder trainen). 
+Jij (de speler) en de ML agent worden naast elkaar geplaatst en zullen om ter snelst de target raken. Wie deze als eerst raakt wint de game.
+
+We kunnen uiteindelijk verschillende agents trainen voor verschillende moeilijkheden. (1 minder trainen en 1 harder trainen).
 
 ### Wat is de functie van de ML-Agent
-Uw tegenspeler met geheugen. We moeten beide op een target schieten wie het snelste is, wint. 
+
+Uw tegenspeler met geheugen. We moeten beide op een target schieten wie het snelste is, wint.
 
 ### Hoe wordt de agnt beloond tijdens de training
-We gaan dit in verschillende stadia doen 
 
-- De agent moet onthouden wat hij gezien heeft. Om hierna een positieve beloning te geven als hij de correcte item aanduid. En een negatieve als hij het foute item aanduid. 
+We gaan dit in verschillende stadia doen
 
-- Als de agent het verschil heeft geleerd tussen de target en de friendly zal hij een wapen krijgen waarmee hij kan schieten op deze items. Als hij het juiste target aanschiet krijgt hij een positieve beloning. Anders krijgt hij een negatieve beloning. 
+- De agent moet onthouden wat hij gezien heeft. Om hierna een positieve beloning te geven als hij de correcte item aanduid. En een negatieve als hij het foute item aanduid.
+
+- Als de agent het verschil heeft geleerd tussen de target en de friendly zal hij een wapen krijgen waarmee hij kan schieten op deze items. Als hij het juiste target aanschiet krijgt hij een positieve beloning. Anders krijgt hij een negatieve beloning.
 
 ### Afwijkingen van de one-pager
+
 We maken voor de eind toepassing niet gebruik van het geheugen. Dit doen we omdat het geheugen getraind is om enkel de optie links of rechts te kiezen. We konden de agent niet opnieuw trainen waarbij deze zelf kon rond draaien.
 
 ## Trainingsverslag
 
 ## Conclusie
+
 Ons westernspel is ontworpen om spelers uit te dagen om zo snel mogelijk een doelwit te raken, terwijl ze het opnemen tegen een AI-tegenstander. We hebben ons best gedaan om ervoor te zorgen dat het spel zowel speelbaar als eerlijk is, zodat spelers een leuke en uitdagende ervaring hebben.
 
 Onze huidige AI-agent presteert over het algemeen goed en kan effectief reageren op de acties van spelers. Echter, toen we probeerden om een getrainde agent met geheugen te implementeren in onze VR-omgeving, ondervonden we enkele problemen. Om die reden raden we het gebruik van geheugen in onze toepassing af.
