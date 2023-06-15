@@ -1,8 +1,13 @@
+# Bullet Time VR
+
+Studenten:
+1. Niels Aarts
+2. Kevin Lahey 
+3. Gil Struyf 
+4. Quinten Moons
+
 ## Een tutorial om ons project te reproduceren
-
-Studenten: 1.Niels Aarts 2.Kevin Lahey 3.Gil Struyf 4.Quinten Moons
-
-In het volgende document wordt onze werkwijze, de gemaakte keuzes, de gebruikte materialen en de vooruitgang besproken.
+In het onderstaande document wordt onze werkwijze, de gemaakte keuzes en de gebruikte materialen en de vooruitgang besproken.
 
 ### Inleiding
 Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd over het doel en de uitdagingen die hen te wachten staan. Zodra de "Start" knop wordt ingedrukt, begint een zinderende countdown en wordt de tegenstander, de AI, geactiveerd. Zodra de tijd begint te tikken, is het aan de spelers en de AI om met precisie en snelheid het juiste doelwit te raken, want falen betekent verlies. Het is essentieel om het juiste doelwit te raken, foutieve doelwitten te vermijden, geen enkel schot te missen en op tijd te schieten. Alleen door sneller en trefzekerder te zijn dan de AI, kan de speler de ultieme overwinning behalen.
@@ -91,8 +96,11 @@ De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schie
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
 
 
+## Informatie one-pager
 
-### Conclusie
+## Trainingsverslag
+
+## Conclusie
 Ons westernspel is ontworpen om spelers uit te dagen om zo snel mogelijk een doelwit te raken, terwijl ze het opnemen tegen een AI-tegenstander. We hebben ons best gedaan om ervoor te zorgen dat het spel zowel speelbaar als eerlijk is, zodat spelers een leuke en uitdagende ervaring hebben.
 
 Onze huidige AI-agent presteert over het algemeen goed en kan effectief reageren op de acties van spelers. Echter, toen we probeerden om een getrainde agent met geheugen te implementeren in onze VR-omgeving, ondervonden we enkele problemen. Om die reden raden we het gebruik van geheugen in onze toepassing af.
