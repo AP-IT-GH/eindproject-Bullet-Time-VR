@@ -8,10 +8,15 @@ Studenten:
 4. Quinten Moons
 
 **INHOUD**
+
 [Tutorial](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#een-tutorial-om-ons-project-te-reproduceren)
+
 [Informatie one-pager](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#informatie-one-pager)
+
 [Trainingsverslag](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#trainingsverslag)
+
 [Conclusie](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#conclusie)
+
 [Bronnen](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#bronvermelding)
 
 ## Een tutorial om ons project te reproduceren
