@@ -212,47 +212,49 @@ behaviors:
 Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
 
 ### Trainingen
+
 We hebben de ML-Agent in stappen geprogrameerd zodat we altijd iets hadden om te presenteren indien een volgende stap niet zou werken.
 
 #### Kleuren herkennen a.d.h.v. een camera
+
 We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 
 - Werking
-	1. Als eerste hebben we een agent gemaakt die 2 actie's kan uitvoeren. Deze kan schieten en heeft de keuze om link/rechts te draaien. Bij het draaien zal de hoek naarwaar de agent kijkt worden aangepast naar 1 van de 2 kleuren. (2 discrete actions) Als de agent naar de kleur groen kijkt en schiet heeft hij gewonnen. De kleur groen en rood veranderen van positie zodat de agent de kleur moet herkennen en niet zijn rotatie kan onthouden. De observaties dat de agent mee krijgt zijn de rotatie en of hij heeft geschoten of niet. Ook heeft de agent de camera sensor met een widh en height van 48x48.
-	2. Als tweede hebben we de agent de mogelijkheid gegeven om deze vrij te laten ronddraaien. (1 discrete action en 1 continuous action)
+  1.  Als eerste hebben we een agent gemaakt die 2 actie's kan uitvoeren. Deze kan schieten en heeft de keuze om link/rechts te draaien. Bij het draaien zal de hoek naarwaar de agent kijkt worden aangepast naar 1 van de 2 kleuren. (2 discrete actions) Als de agent naar de kleur groen kijkt en schiet heeft hij gewonnen. De kleur groen en rood veranderen van positie zodat de agent de kleur moet herkennen en niet zijn rotatie kan onthouden. De observaties dat de agent mee krijgt zijn de rotatie en of hij heeft geschoten of niet. Ook heeft de agent de camera sensor met een widh en height van 48x48.
+  2.  Als tweede hebben we de agent de mogelijkheid gegeven om deze vrij te laten ronddraaien. (1 discrete action en 1 continuous action)
 - Beloningen/straffen
-	- Correcte kleur beschoten = AddReward(1)
-	- Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
+  - Correcte kleur beschoten = AddReward(1)
+  - Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
 - Test opstelling
-	- Als trainings veld gebruiken we 2 spheres met 2 verchillende kleuren. De kleur groen is in het script ingesteld dat deze de correcte kleur is en waarvoor hij een reward zal ontvangen.
-	- ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
+  - Als trainings veld gebruiken we 2 spheres met 2 verchillende kleuren. De kleur groen is in het script ingesteld dat deze de correcte kleur is en waarvoor hij een reward zal ontvangen.
+  - ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
 - Grafieken
-	1. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
-		- In de grafiek is te zien dat de agent na 80k stappen doorhad welke sphere hij een hoge reward opleverden. De grafiek heeft een linear verband.
-	3. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
-		- Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. Dit komt waarschijlijk doordat de agent ook moest leren rond draaien. De grafiek heeft ook een linear verband.
+  1.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
+      - In de grafiek is te zien dat de agent na 80k stappen doorhad welke sphere hij een hoge reward opleverden. De grafiek heeft een linear verband.
+  2.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
+      - Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. Dit komt waarschijlijk doordat de agent ook moest leren rond draaien. De grafiek heeft ook een linear verband.
 - Conclusie
-	- Het trainen van de agent met de camera verliep zeer vlot. De agent had snel door welke acties hij moest uitvoeren om een goede beloning te ontvangen.
+  - Het trainen van de agent met de camera verliep zeer vlot. De agent had snel door welke acties hij moest uitvoeren om een goede beloning te ontvangen.
 
 #### Kleuren onthouden a.d.h.v. een camera en geheugen
+
 In dit gedeelte hebben we memory toegevoegd aan de agent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten. Om gebruik te maken van het memory gedeelte in een ML agent moeten we dit in de config.yaml file aanpassen.
 
-
 - Werking
-	1. De agent wordt geplaats met de camera richting een rode of groene kleur. Hierna kan de agent kiezen voor links of rechts en zal dan naar een andere kleur draaienen. Hierbij kan hij ook de actie uitoveren om te schieten en zal er gecontroleerd worden of dit dezelfde kleur was als de agent als eerste zag. (2 discrete actions) De rode en groene kleur veranderen van positie en zullen ook van kleur veranderen op de startpositie.
+  1.  De agent wordt geplaats met de camera richting een rode of groene kleur. Hierna kan de agent kiezen voor links of rechts en zal dan naar een andere kleur draaienen. Hierbij kan hij ook de actie uitoveren om te schieten en zal er gecontroleerd worden of dit dezelfde kleur was als de agent als eerste zag. (2 discrete actions) De rode en groene kleur veranderen van positie en zullen ook van kleur veranderen op de startpositie.
 - Beloningen/straffen
-	- Correcte kleur beschoten = AddReward(1)
-	- Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
+  - Correcte kleur beschoten = AddReward(1)
+  - Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
 - Test opstelling
-	- Als trainings veld gebruiken we 2 spheres met 2 verschillende kleuren. Deze speheres veranderen van positie als er een nieuwe episode start. Ook bevindt er zich aan 1 zijde van het veld een extra sphere die de kleur rood of groen zal bevatten. Dit is de kleur die de agent moet onthouden.
-	- ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
+  - Als trainings veld gebruiken we 2 spheres met 2 verschillende kleuren. Deze speheres veranderen van positie als er een nieuwe episode start. Ook bevindt er zich aan 1 zijde van het veld een extra sphere die de kleur rood of groen zal bevatten. Dit is de kleur die de agent moet onthouden.
+  - ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
 - Grafieken
-	1. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_3t.jpg)
-		- In de bovestaande grafiek is te zien dat er veel verschil in de grafiek zit. Het gedeelte van 0.5M tot 4M zit de reward tussen 0.4 en 0.5 te schommelen. De reden hiervoor kan zijn dat de agent 1/2 kans heeft dat het, het rode element of het groene element moet raken. Na 4M daalt de reward weer tot tussen 0.2 en -0.2 waarna hij linear stijgt totdat hij stabiel is bij 9M.
-	2. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_4t.jpg)
-		- Deze resultaten zijn van het brein dat we 5 minuten hebben laten runnen. Hieruit kunnen we afleiden dat hij van de 362 maar 2 keer fout heeft geschoten. En kunnen concluderen dat het brein werkt.
+  1.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_3t.jpg)
+      - In de bovestaande grafiek is te zien dat er veel verschil in de grafiek zit. Het gedeelte van 0.5M tot 4M zit de reward tussen 0.4 en 0.5 te schommelen. De reden hiervoor kan zijn dat de agent 1/2 kans heeft dat het, het rode element of het groene element moet raken. Na 4M daalt de reward weer tot tussen 0.2 en -0.2 waarna hij linear stijgt totdat hij stabiel is bij 9M.
+  2.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_4t.jpg)
+      - Deze resultaten zijn van het brein dat we 5 minuten hebben laten runnen. Hieruit kunnen we afleiden dat hij van de 362 maar 2 keer fout heeft geschoten. En kunnen concluderen dat het brein werkt.
 - Conclusie
-	- Uit de resultaten kan ik afleiden dat het werken met geheugen een grote invloed heeft op deze resultaten. Ook is er een groot verschil in het aantal stappen dat we deze agent moesten laten trainen tegenover enkel de camera.
+  - Uit de resultaten kan ik afleiden dat het werken met geheugen een grote invloed heeft op deze resultaten. Ook is er een groot verschil in het aantal stappen dat we deze agent moesten laten trainen tegenover enkel de camera.
 
 ## Conclusie
 
