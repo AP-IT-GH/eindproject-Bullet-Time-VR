@@ -279,6 +279,8 @@ Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig k
 
 In de toekomst zouden er verschillende moeilijkheids graden gekozen kunnen worden. Dit zou dan bv gedaan kunnen worden door een agent maar een x aantal stappen te laten trainen waardoor deze beter/slechter wordt.
 
+[Video](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e13f2dc3-6067-48e0-9a5d-b022011a3a99)
+
 ## Bronvermelding
 
 1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
