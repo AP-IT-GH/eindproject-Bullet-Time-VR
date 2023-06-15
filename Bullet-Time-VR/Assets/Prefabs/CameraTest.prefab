@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 1026746196684147383}
   m_Layer: 3
   m_Name: Friendly_F
-  m_TagString: Friendly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1425,6 +1425,8 @@ MonoBehaviour:
   Rood: {fileID: 1026746196150396417}
   Groen_vb: {fileID: 1026746196684147380}
   Rood_vb: {fileID: 1026746196824437150}
+  rotationSpeed: 20
+  stepSize: 5
   shootScript: {fileID: 1026746195887513317}
 --- !u!114 &1026746196721133212
 MonoBehaviour:
@@ -1543,7 +1545,7 @@ GameObject:
   - component: {fileID: 1026746196824437145}
   m_Layer: 3
   m_Name: Target_F
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
