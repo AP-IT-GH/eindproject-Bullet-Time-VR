@@ -65,39 +65,45 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schieten. Dit gebeurt door een discrete action te gebruiken. Aangezien schieten geen continuou iets is. Het is schieten (value = 1) of niet schieten (alle andere values), hiervoor dat we een "actionBuffers.DiscreteActions[0] == 1" checken dan geeft hij een bool terug en is het gemakkelijker om met de werken doorheen onze code. Als deze bool true wordt zullen we een functie van een extern script (shootScript.Shoot()) aanspreken om dus te schieten. Dit shoot script zal een tag string terug geven van het object dat hij heeft geraakt, hiervan kunnen we bepalen of hij goed geschoten heeft of niet om al dan niet te belonen.
 
 ```
-		public override void OnActionReceived(ActionBuffers actionBuffers)
-    		{
-        		bool shoot = actionBuffers.DiscreteActions[0] == 1;
-        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
-        		if (shoot) // if jump button is pressed and is on the ground
-        		{
-            		print("Pang");
+public override void OnActionReceived(ActionBuffers actionBuffers)
 
-            		if (shootScript != null)
-            		{
-                		string tag = shootScript.Shoot();
-                		if (tag == "Target")
-                		{
-                    		print("Target hit");
-                    		SetReward(1);
-                		} else
-                		{
-                    		  SetReward(-0.1f);
-                		}
-            		}
-            		EndEpisode();
-        		}
-    		}
+    {
+        bool shoot = actionBuffers.DiscreteActions[0] == 1;
+        transform.Rotate(0.0f, 2.0f * actionBuffers.ContinuousActions[0], 0.0f);
+
+        if (shoot && !shot)
+        {
+            shot = true;
+            print("Shoot");
+            string tag = shootScript.Shoot();
+
+            if (tag == "Friendly")
+            {
+                AddReward(1f);
+            }
+            else if(tag == "Target")
+            {
+                AddReward(-1f);
+            }
+            else
+            {
+                AddReward(-0.5f);
+            }
+
+            print("cummulative: " + GetCumulativeReward());
+            EndEpisode();
+        }
+
+    }
 ```
 
 6. Trainen
 
    - Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
      Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
-     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
-     Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
+     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken). Vindt u onderaan bij het trainingsverslag.
 
-7. Belonen
+7. Beloningen
 
    - Als de agent de target raakt krijgt die een positieve beloning.
    - Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
