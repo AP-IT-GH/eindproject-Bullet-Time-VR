@@ -121,7 +121,7 @@ We gaan dit in verschillende stadia doen
 
 - Als de agent het verschil heeft geleerd tussen de target en de friendly zal hij een wapen krijgen waarmee hij kan schieten op deze items. Als hij het juiste target aanschiet krijgt hij een positieve beloning. Anders krijgt hij een negatieve beloning. 
 
-### Afwijkingen van one-pager
+### Afwijkingen van de one-pager
 We maken voor de eind toepassing niet gebruik van het geheugen. Dit doen we omdat het geheugen getraind is om enkel de optie links of rechts te kiezen. We konden de agent niet opnieuw trainen waarbij deze zelf kon rond draaien.
 
 ## Trainingsverslag
