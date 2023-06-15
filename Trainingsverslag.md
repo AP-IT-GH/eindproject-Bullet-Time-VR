@@ -71,7 +71,6 @@ Als eerste opstelling hebben we ervoor gekozen om enkel de camera te gebruiken o
 	- We geven 2 observaties mee aan de agent
 		- Zijn eigen rotatie.
 		- Of er geschoten is.
-	
 - Beloningen/straffen:
 	- Correcte kleur aangeduid = AddReward(1)
 	- Niet de juiste kleur en/of muur = AddReward(-1)
@@ -81,8 +80,7 @@ Als eerste opstelling hebben we ervoor gekozen om enkel de camera te gebruiken o
 	- Grafiek tensor bord i.v.m. kleuren herkennen.
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
 - Besluit:
-	- 
-
+	- De agent leerde snel dat hij een beloning kreeg door op de kleur groen te schieten. Op het tensor bord is er te zien dat reward in een lineare lijn ligt. Ook heeft de agent na 80k stappen al een reward van bijna 1. Als we het uiteindelijke brein gebruiken is er te zien dat deze correct werkt.
 ### Kleur onthouden aan de hand van een camera
 
 
