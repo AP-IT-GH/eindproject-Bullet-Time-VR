@@ -46,7 +46,10 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 
    - Pistool: Je kunt dit object oppakken en hiermee schieten.
 
-4. Scripten
+4. Verloop van het spel
+   Als je het spel start dan krijg je een startscherm, hier wordt het spel uitgelegd. Als je dan op de Begin knop drukt, dan krijg je een wanted poster te zien met de persoon waar jij op moet schieten. Druk je dan op de start knop dan krijg je een countdown te zien die van 5 tot 0 telt. Als deze op 0 is gekomen dan moet je zo snel mogelijk omdraaien, het geweer oppakken en de juiste persoon neerschieten. Heb je de juiste persoon neergeschoten dan krijg je een scherm te zien dat zegt dat je gewonnen hebt en vraagt of je opnieuw wilt spelen. Heb je de foute persoon neergeschoten of ben je zelf neergeschoten dan krijg je een scherm te zien dat zegt dat je verloren hebt en vraagt of je opnieuw wilt spelen. Zijn jij en je teamgenoot neergeschoten dan krijg je een scherm te zien dat zegt dat jullie verloren hebben en vraagt of je opnieuw wilt spelen. Je kunt ook een scherm openen dat aan je linker hand is verbonden waarmee je het spel kunt resetten.
+
+5. Scripten
    - Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
      Dit is van belang omdat de snelste het spel zal winnen.
    - Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
@@ -87,20 +90,20 @@ De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schie
     		}
 ```
 
-5. Trainen
+6. Trainen
 
    - Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
      Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
      opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
      Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
 
-6. Belonen
+7. Belonen
 
    - Als de agent de target raakt krijgt die een positieve beloning.
    - Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
    - Als de agent de friendly raakt krijgt hij een grotere negatieve beloning.
 
-7. Afwerking
+8. Afwerking
    - UI: Een start scherm en reset scherm.
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
 
