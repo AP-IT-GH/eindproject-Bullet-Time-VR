@@ -8,10 +8,15 @@ Studenten:
 4. Quinten Moons
 
 **INHOUD**
+
 [Tutorial](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#een-tutorial-om-ons-project-te-reproduceren)
+
 [Informatie one-pager](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#informatie-one-pager)
+
 [Trainingsverslag](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#trainingsverslag)
+
 [Conclusie](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#conclusie)
+
 [Bronnen](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#bronvermelding)
 
 ## Een tutorial om ons project te reproduceren
@@ -240,7 +245,7 @@ We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
   1.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
       - In de grafiek is te zien dat de agent na 80k stappen doorhad welke sphere hij een hoge reward opleverden. De grafiek heeft een linear verband.
   2.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
-      - Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. Dit komt waarschijlijk doordat de agent ook moest leren rond draaien. De grafiek heeft ook een linear verband.
+      - Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. Dit komt waarschijnlijk doordat de agent ook moest leren rond draaien. De grafiek heeft ook een linear verband.
 - Conclusie
   - Het trainen van de agent met de camera verliep zeer vlot. De agent had snel door welke acties hij moest uitvoeren om een goede beloning te ontvangen.
 
