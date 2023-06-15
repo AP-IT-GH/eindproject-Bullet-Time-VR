@@ -251,7 +251,7 @@ In dit gedeelte hebben we memory toegevoegd aan de agent zodat deze de eerste kl
 - Grafieken
   1.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_3t.jpg)
       - In de bovestaande grafiek is te zien dat er veel verschil in de grafiek zit. Het gedeelte van 0.5M tot 4M zit de reward tussen 0.4 en 0.5 te schommelen. De reden hiervoor kan zijn dat de agent 1/2 kans heeft dat het, het rode element of het groene element moet raken. Na 4M daalt de reward weer tot tussen 0.2 en -0.2 waarna hij linear stijgt totdat hij stabiel is bij 9M.
-  2.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_4t.jpg)
+  2.  ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_4.jpg)
       - Deze resultaten zijn van het brein dat we 5 minuten hebben laten runnen. Hieruit kunnen we afleiden dat hij van de 362 maar 2 keer fout heeft geschoten. En kunnen concluderen dat het brein werkt.
 - Conclusie
   - Uit de resultaten kan ik afleiden dat het werken met geheugen een grote invloed heeft op deze resultaten. Ook is er een groot verschil in het aantal stappen dat we deze agent moesten laten trainen tegenover enkel de camera.
