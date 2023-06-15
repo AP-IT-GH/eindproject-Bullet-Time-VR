@@ -281,4 +281,4 @@ Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig k
 1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
 2. Unity Technologies, (2022). Training Configuration File. https://unity-technologies.github.io/ml-agents/Training-Configuration-File/#memory-enhanced-agents-using-recurrent-neural-networks
 3. Matt Cone, (2023). Markdown Cheat sheet. https://www.markdownguide.org/cheat-sheet/
-4.
+4. Unity Technologies, (2023). Create with VR. https://learn.unity.com/course/create-with-vr?uv=2021.3
