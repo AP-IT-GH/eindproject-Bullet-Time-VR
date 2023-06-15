@@ -226,13 +226,22 @@ We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 	- Het trainen van de agent met de camera verliep zeer vlot. De agent had snel door welke acties hij moest uitvoeren om een goede beloning te ontvangen.
 
 #### Kleuren onthouden a.d.h.v. een camera en geheugen
-In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
+In dit gedeelte hebben we memory toegevoegd aan de agent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten. Om gebruik te maken van het memory gedeelte in een ML agent moeten we dit in de config.yaml file aanpassen.
 
 
 - Werking
+	1. De agent wordt geplaats met de camera richting een rode of groene kleur. Hierna kan de agent kiezen voor links of rechts en zal dan naar een andere kleur draaienen. Hierbij kan hij ook de actie uitoveren om te schieten en zal er gecontroleerd worden of dit dezelfde kleur was als de agent als eerste zag. (2 discrete actions) De rode en groene kleur veranderen van positie en zullen ook van kleur veranderen op de startpositie.
 - Beloningen/straffen
+	- Correcte kleur beschoten = AddReward(1)
+	- Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
 - Test opstelling
+	- Als trainings veld gebruiken we 2 spheres met 2 verschillende kleuren. Deze speheres veranderen van positie als er een nieuwe episode start. Ook bevindt er zich aan 1 zijde van het veld een extra sphere die de kleur rood of groen zal bevatten. Dit is de kleur die de agent moet onthouden.
+	- ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
 - Grafieken
+	1. f
+	2. f
+	3. f
+	4. 
 - Conclusie
 
 ## Conclusie
