@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class shoot : MonoBehaviour
@@ -140,7 +141,14 @@ public class shoot : MonoBehaviour
             //    target.TakeDamage(damage);
             //}
 
+            
+
             hitTag = hit.collider.gameObject.tag;
+            if (hitTag == "Head")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
             return hit.collider.gameObject.tag;
         }
            //    // Draw raycast in scene view
@@ -175,6 +183,11 @@ public class shoot : MonoBehaviour
             //}
 
             hitTag = hit.collider.gameObject.tag;
+
+            if (hitTag == "Head")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
     }
