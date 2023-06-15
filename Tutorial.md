@@ -101,10 +101,9 @@ public override void OnActionReceived(ActionBuffers actionBuffers)
 
    - Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
      Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
-     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
-     Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
+     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken). Vindt u onderaan bij het trainingsverslag.
 
-7. Belonen
+7. Beloningen
 
    - Als de agent de target raakt krijgt die een positieve beloning.
    - Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
