@@ -7,6 +7,13 @@ Studenten:
 3. Gil Struyf
 4. Quinten Moons
 
+**INHOUD**
+[Tutorial](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#een-tutorial-om-ons-project-te-reproduceren)
+[Informatie one-pager](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#informatie-one-pager)
+[Trainingsverslag](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#trainingsverslag)
+[Conclusie](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#conclusie)
+[Bronnen](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Tutorial.md#bronvermelding)
+
 ## Een tutorial om ons project te reproduceren
 
 In het onderstaande document wordt onze werkwijze, de gemaakte keuzes en de gebruikte materialen en de vooruitgang besproken.
@@ -14,8 +21,6 @@ In het onderstaande document wordt onze werkwijze, de gemaakte keuzes en de gebr
 ### Inleiding
 
 Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd over het doel en de uitdagingen die hen te wachten staan. Zodra de "Start" knop wordt ingedrukt, begint een zinderende countdown en wordt de tegenstander, de AI, geactiveerd. Zodra de tijd begint te tikken, is het aan de spelers en de AI om met precisie en snelheid het juiste doelwit te raken, want falen betekent verlies. Het is essentieel om het juiste doelwit te raken, foutieve doelwitten te vermijden, geen enkel schot te missen en op tijd te schieten. Alleen door sneller en trefzekerder te zijn dan de AI, kan de speler de ultieme overwinning behalen.
-
-### Samenvatting
 
 ### Werkwijze
 
@@ -45,9 +50,11 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 3. Objecten
 
    - Pistool: Je kunt dit object oppakken en hiermee schieten.
+   - ML-Agent: Dit is de agent die een pistool vast heeft en a.d.h.v. een camera de juiste target zal raken.
+   - 2 kleuren spheres: Er is een rode en een groene sphere die op random plaatsen spawnen zodat het niet altijd opdezelfde plek is.
 
 4. Verloop van het spel
-   Als je het spel start dan krijg je een startscherm, hier wordt het spel uitgelegd. Als je dan op de Begin knop drukt, dan krijg je een wanted poster te zien met de persoon waar jij op moet schieten. Druk je dan op de start knop dan krijg je een countdown te zien die van 5 tot 0 telt. Als deze op 0 is gekomen dan moet je zo snel mogelijk omdraaien, het geweer oppakken en de juiste persoon neerschieten. Heb je de juiste persoon neergeschoten dan krijg je een scherm te zien dat zegt dat je gewonnen hebt en vraagt of je opnieuw wilt spelen. Ben je zelf neergeschoten dan krijg je een scherm te zien dat zegt dat je verloren hebt en vraagt of je opnieuw wilt spelen. Hebben zowel jij als je tegenstander elkaar niet neergeschoten dan krijg je een scherm te zien dat zegt dat jullie allebei verloren hebben en vraagt of je opnieuw wilt spelen. Je kunt ook een scherm openen dat aan je linker hand is verbonden waarmee je het spel kunt resetten.
+   Als je het spel start dan krijg je een startscherm, hier wordt het spel uitgelegd. Als je dan op de Begin knop drukt, dan krijg je een wanted poster te zien met de persoon waar jij op moet schieten. Druk je dan op de start knop dan krijg je een countdown te zien die van 5 tot 0 telt. Als deze op 0 is gekomen dan moet je zo snel mogelijk omdraaien, het geweer oppakken en de juiste persoon neerschieten. Heb je de juiste persoon neergeschoten dan krijg je een scherm te zien dat zegt dat je gewonnen hebt en vraagt of je opnieuw wilt spelen. Ben je tragen dan de ML-Agent dan krijg je een scherm te zien dat zegt dat je verloren hebt en vraagt of je opnieuw wilt spelen. Hebben zowel jij als je de ML-Agent niemand neergeschoten dan krijg je een scherm te zien dat zegt dat jullie allebei verloren hebben en vraagt of je opnieuw wilt spelen. Je kunt ook een scherm openen dat aan je linker hand is verbonden waarmee je het spel kunt resetten.
 
 5. Scripten
    - Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
@@ -224,7 +231,8 @@ We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
   2.  Als tweede hebben we de agent de mogelijkheid gegeven om deze vrij te laten ronddraaien. (1 discrete action en 1 continuous action)
 - Beloningen/straffen
   - Correcte kleur beschoten = AddReward(1)
-  - Niet de juiste kleur en/of de muur beschoten = AddReward(-1)
+  - Niet de juiste kleur beschoten = AddReward(-1)
+  - De muur geraakt = AddReward(-0.5)
 - Test opstelling
   - Als trainings veld gebruiken we 2 spheres met 2 verchillende kleuren. De kleur groen is in het script ingesteld dat deze de correcte kleur is en waarvoor hij een reward zal ontvangen.
   - ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
