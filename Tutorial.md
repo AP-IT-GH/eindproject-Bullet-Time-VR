@@ -8,6 +8,7 @@ In het volgende document wordt onze werkwijze, de gemaakte keuzes, de gebruikte 
 Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd over het doel en de uitdagingen die hen te wachten staan. Zodra de "Start" knop wordt ingedrukt, begint een zinderende countdown en wordt de tegenstander, de AI, geactiveerd. Zodra de tijd begint te tikken, is het aan de spelers en de AI om met precisie en snelheid het juiste doelwit te raken, want falen betekent verlies. Het is essentieel om het juiste doelwit te raken, foutieve doelwitten te vermijden, geen enkel schot te missen en op tijd te schieten. Alleen door sneller en trefzekerder te zijn dan de AI, kan de speler de ultieme overwinning behalen.
 
 
+### Werkwijze
 1. Begin met je omgeving te creeren dit bevat volgende zaken
 
    - Uw targets, ML Agent en friendly.
