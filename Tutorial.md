@@ -133,6 +133,73 @@ We gaan dit in verschillende stadia doen
 We maken voor de eind toepassing niet gebruik van het geheugen. Dit doen we omdat het geheugen getraind is om enkel de optie links of rechts te kiezen. We konden de agent niet opnieuw trainen waarbij deze zelf kon rond draaien.
 
 ## Trainingsverslag
+Hierond vindt u terug hoe wij onze agent hebben getraind. In ons eindresultaat maken we gebruik van de agent die de correcte kleur kan aanduiden, waarom we dit doen zal u hieronder kunnen lezen.
+
+### Parameters
+De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd "Cowboy" in Unity's ML-Agents, die wordt getraind met behulp van het Proximal Policy Optimization (PPO) algoritme. Hier is een korte uitleg van de belangrijkste hyperparameters die in de gegeven configuratie worden gebruikt:
+
+- `batch_size`: Het aantal ervaringen (samples) dat wordt gebruikt om een enkele optimalisatiestap uit te voeren.
+- `buffer_size`: De grootte van de ervaringsbuffer die wordt gebruikt voor het opslaan van ervaringen tijdens het leren.
+- `learning_rate`: De snelheid waarmee het algoritme leert. Het bepaalt hoeveel de modelparameters worden aangepast op basis van de leervergelijking.
+- `beta`: Een coëfficiënt die de sterkte van de entropieregularisatie bepaalt, waardoor de verkenning van het beleid wordt bevorderd.
+- `epsilon`: Een parameter die de clipwaarde bepaalt bij het berekenen van de PPO-objectieve functie.
+- `lambd`: De lambda-waarde die wordt gebruikt bij de berekening van de Generalized Advantage Estimation (GAE), die de voordelen van acties schat.
+- `num_epoch`: Het aantal optimalisatiestappen per leercyclus.
+- `learning_rate_schedule`: Het schema waarmee de leersnelheid lineair wordt verminderd gedurende de training.
+- `hidden_units`: Het aantal eenheden (neuronen) in elke verborgen laag van het neurale netwerk.
+- `num_layers`: Het aantal verborgen lagen in het neurale netwerk.
+- `vis_encode_type`: Het type visual encoding dat wordt gebruikt om visuele invoergegevens te verwerken.
+- `user_recurrent`: Een vlag die aangeeft of recurrente neurale netwerken worden gebruikt voor de agent.
+- `memory`: Een configuratie voor het geheugen van recurrente neurale netwerken, inclusief de sequentielengte en geheugengrootte.
+- `reward_signals`: Configuratie van beloningssignalen voor het trainen van het gedrag van de agent.
+- `keep_checkpoints`: Het aantal trainingscheckpoints dat wordt behouden tijdens het trainingsproces.
+- `max_steps`: Het maximale aantal stappen dat de agent mag nemen tijdens het trainen.
+- `time_horizon`: Het aantal tijdstappen dat wordt gebruikt voor het berekenen van voordeelsschattingen en het vormen van de leerdatabatch.
+- `summary_freq`: De frequentie waarmee samenvattingsgegevens worden vastgelegd tijdens het trainingsproces.
+- `threaded`: Een vlag die aangeeft of het trainingsproces multithreaded wordt uitgevoerd.
+
+Dit zijn slechts enkele van de hyperparameters die kunnen worden aangepast in het trainingsproces van een ML-Agent in Unity. Door deze waarden aan te passen, kun je het leergedrag van de agent beïnvloeden en optimaliseren voor het specifieke probleem of de taak die je wilt oplossen.
+
+**Hyper parameters**
+```
+behaviors:
+  Cowboy:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 128
+      buffer_size: 1024
+      learning_rate: 0.0003
+      beta: 0.03
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+      memory:
+        sequence_length: 64
+        memory_size: 128
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    keep_checkpoints: 5
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: true
+```
+Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
+
+### Trainingen
+#### Kleuren herkennen a.d.h.v. een camera
+We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
+
+#### Kleuren onthouden a.d.h.v. een camera en geheugen
+In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
 
 ## Conclusie
 
@@ -145,3 +212,9 @@ Het gebruik van geheugen in een AI-agent kan verschillende voordelen bieden, zoa
 We hebben vastgesteld dat de implementatie van het geheugen in onze agent leidde tot technische complicaties en ongewenste resultaten. Het had een negatieve invloed op de algehele prestaties en speelbaarheid van het spel. We hebben de moeilijkheid ervaren om het geheugen effectief te integreren in de VR-omgeving en het spelveld, waardoor de ervaring voor spelers minder bevredigend werd.
 
 Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig kan zijn, hebben we besloten om deze functie niet te gebruiken in onze huidige toepassing. We zijn nog steeds tevreden met hoe onze AI-agent functioneert zonder het geheugen en geloven dat het spel een aantrekkelijke uitdaging biedt aan spelers.
+
+## Bronvermelding
+1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
+2. Unity Technologies, (2022). Training Configuration File. https://unity-technologies.github.io/ml-agents/Training-Configuration-File/#memory-enhanced-agents-using-recurrent-neural-networks
+3. Matt Cone, (2023). Markdown Cheat sheet. https://www.markdownguide.org/cheat-sheet/
+4. 
