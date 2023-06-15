@@ -1,6 +1,6 @@
 ## Een tutorial om ons project te reproduceren
 
-Studenten: 1. Niels Aarts 2. Kevin Lahey 3. Gil Struyf 4. Quinten Moons
+Studenten: 1.Niels Aarts 2.Kevin Lahey 3.Gil Struyf 4.Quinten Moons
 
 In het volgende document wordt onze werkwijze, de gemaakte keuzes, de gebruikte materialen en de vooruitgang besproken.
 
@@ -13,6 +13,7 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 
    - Uw targets, ML Agent en friendly.
    - Importeer alle packages (ML Agents en XR rig).
+     ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Versies.png)
    - Importeer de nodige assets die je wilt gebruiken.
 
 2. Design een map
