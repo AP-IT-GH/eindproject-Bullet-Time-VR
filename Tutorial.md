@@ -2,6 +2,8 @@
 
 Studenten: 1. Niels Aarts 2. Kevin Lahey 3. Gil Struyf 4. Quinten Moons
 
+In het volgende document wordt onze werkwijze, de gemaakte keuzes, de gebruikte materialen en de vooruitgang besproken.
+
 ###
 
 1. Begin met je omgeving te creeren dit bevat volgende zaken
