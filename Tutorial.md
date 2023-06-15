@@ -219,10 +219,11 @@ We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 	- ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
 - Grafieken
 	1. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
-		- In de grafiek is te zien dat de agent na 80k stappen doorhad welke sphere hij moest raken
+		- In de grafiek is te zien dat de agent na 80k stappen doorhad welke sphere hij een hoge reward opleverden. De grafiek heeft een linear verband.
 	3. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
-		- 
+		- Bij deze grafiek is er de mogelijkheid toegevoed dat de agent zelf rond draait. Het verschil met de vorige grafiek is dat er een kleinere stijging is van de reward. De grafiek heeft ook een linear verband.
 - Conclusie
+
 
 #### Kleuren onthouden a.d.h.v. een camera en geheugen
 In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
