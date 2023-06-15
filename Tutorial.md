@@ -125,6 +125,39 @@ We gaan dit in verschillende stadia doen
 We maken voor de eind toepassing niet gebruik van het geheugen. Dit doen we omdat het geheugen getraind is om enkel de optie links of rechts te kiezen. We konden de agent niet opnieuw trainen waarbij deze zelf kon rond draaien.
 
 ## Trainingsverslag
+Hierond vindt u terug hoe wij onze agent hebben getraind. In ons eindresultaat maken we gebruik van de agent die de correcte kleur kan aanduiden, waarom we dit doen zal u hieronder kunnen lezen.
+
+### Parameters
+De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd "Cowboy" in Unity's ML-Agents, die wordt getraind met behulp van het Proximal Policy Optimization (PPO) algoritme. Hier is een korte uitleg van de belangrijkste hyperparameters die in de gegeven configuratie worden gebruikt:
+
+- `batch_size`: Het aantal ervaringen (samples) dat wordt gebruikt om een enkele optimalisatiestap uit te voeren.
+- `buffer_size`: De grootte van de ervaringsbuffer die wordt gebruikt voor het opslaan van ervaringen tijdens het leren.
+- `learning_rate`: De snelheid waarmee het algoritme leert. Het bepaalt hoeveel de modelparameters worden aangepast op basis van de leervergelijking.
+- `beta`: Een coëfficiënt die de sterkte van de entropieregularisatie bepaalt, waardoor de verkenning van het beleid wordt bevorderd.
+- `epsilon`: Een parameter die de clipwaarde bepaalt bij het berekenen van de PPO-objectieve functie.
+- `lambd`: De lambda-waarde die wordt gebruikt bij de berekening van de Generalized Advantage Estimation (GAE), die de voordelen van acties schat.
+- `num_epoch`: Het aantal optimalisatiestappen per leercyclus.
+- `learning_rate_schedule`: Het schema waarmee de leersnelheid lineair wordt verminderd gedurende de training.
+- `hidden_units`: Het aantal eenheden (neuronen) in elke verborgen laag van het neurale netwerk.
+- `num_layers`: Het aantal verborgen lagen in het neurale netwerk.
+- `vis_encode_type`: Het type visual encoding dat wordt gebruikt om visuele invoergegevens te verwerken.
+- `user_recurrent`: Een vlag die aangeeft of recurrente neurale netwerken worden gebruikt voor de agent.
+- `memory`: Een configuratie voor het geheugen van recurrente neurale netwerken, inclusief de sequentielengte en geheugengrootte.
+- `reward_signals`: Configuratie van beloningssignalen voor het trainen van het gedrag van de agent.
+- `keep_checkpoints`: Het aantal trainingscheckpoints dat wordt behouden tijdens het trainingsproces.
+- `max_steps`: Het maximale aantal stappen dat de agent mag nemen tijdens het trainen.
+- `time_horizon`: Het aantal tijdstappen dat wordt gebruikt voor het berekenen van voordeelsschattingen en het vormen van de leerdatabatch.
+- `summary_freq`: De frequentie waarmee samenvattingsgegevens worden vastgelegd tijdens het trainingsproces.
+- `threaded`: Een vlag die aangeeft of het trainingsproces multithreaded wordt uitgevoerd.
+
+Dit zijn slechts enkele van de hyperparameters die kunnen worden aangepast in het trainingsproces van een ML-Agent in Unity. Door deze waarden aan te passen, kun je het leergedrag van de agent beïnvloeden en optimaliseren voor het specifieke probleem of de taak die je wilt oplossen.
+
+Onze trainings file kan u terug vinden op volgende (link)[https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml].
+
+### Kleuren herkennen a.d.h.v. een camera
+
+### Kleuren onthouden a.d.h.v. een camera en geheugen
+
 
 ## Conclusie
 Ons westernspel is ontworpen om spelers uit te dagen om zo snel mogelijk een doelwit te raken, terwijl ze het opnemen tegen een AI-tegenstander. We hebben ons best gedaan om ervoor te zorgen dat het spel zowel speelbaar als eerlijk is, zodat spelers een leuke en uitdagende ervaring hebben.
@@ -140,4 +173,5 @@ Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig k
 ## Bronvermelding
 1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
 2. Unity Technologies, (2022). Training Configuration File. https://unity-technologies.github.io/ml-agents/Training-Configuration-File/#memory-enhanced-agents-using-recurrent-neural-networks
-3. 
+3. Matt Cone, (2023). Markdown Cheat sheet. https://www.markdownguide.org/cheat-sheet/
+4. 
