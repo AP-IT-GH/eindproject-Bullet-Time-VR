@@ -46,7 +46,10 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 
    - Pistool: Je kunt dit object oppakken en hiermee schieten.
 
-4. Scripten
+4. Verloop van het spel
+   Als je het spel start dan krijg je een startscherm, hier wordt het spel uitgelegd. Als je dan op de Begin knop drukt, dan krijg je een wanted poster te zien met de persoon waar jij op moet schieten. Druk je dan op de start knop dan krijg je een countdown te zien die van 5 tot 0 telt. Als deze op 0 is gekomen dan moet je zo snel mogelijk omdraaien, het geweer oppakken en de juiste persoon neerschieten. Heb je de juiste persoon neergeschoten dan krijg je een scherm te zien dat zegt dat je gewonnen hebt en vraagt of je opnieuw wilt spelen. Heb je de foute persoon neergeschoten of ben je zelf neergeschoten dan krijg je een scherm te zien dat zegt dat je verloren hebt en vraagt of je opnieuw wilt spelen. Zijn jij en je teamgenoot neergeschoten dan krijg je een scherm te zien dat zegt dat jullie verloren hebben en vraagt of je opnieuw wilt spelen. Je kunt ook een scherm openen dat aan je linker hand is verbonden waarmee je het spel kunt resetten.
+
+5. Scripten
    - Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
      Dit is van belang omdat de snelste het spel zal winnen.
    - Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
@@ -62,45 +65,51 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schieten. Dit gebeurt door een discrete action te gebruiken. Aangezien schieten geen continuou iets is. Het is schieten (value = 1) of niet schieten (alle andere values), hiervoor dat we een "actionBuffers.DiscreteActions[0] == 1" checken dan geeft hij een bool terug en is het gemakkelijker om met de werken doorheen onze code. Als deze bool true wordt zullen we een functie van een extern script (shootScript.Shoot()) aanspreken om dus te schieten. Dit shoot script zal een tag string terug geven van het object dat hij heeft geraakt, hiervan kunnen we bepalen of hij goed geschoten heeft of niet om al dan niet te belonen.
 
 ```
-		public override void OnActionReceived(ActionBuffers actionBuffers)
-    		{
-        		bool shoot = actionBuffers.DiscreteActions[0] == 1;
-        		this.transform.Rotate(0.0f, rotationMultiplier * actionBuffers.ContinuousActions[0], 0.0f);
-        		if (shoot) // if jump button is pressed and is on the ground
-        		{
-            		print("Pang");
+public override void OnActionReceived(ActionBuffers actionBuffers)
 
-            		if (shootScript != null)
-            		{
-                		string tag = shootScript.Shoot();
-                		if (tag == "Target")
-                		{
-                    		print("Target hit");
-                    		SetReward(1);
-                		} else
-                		{
-                    		  SetReward(-0.1f);
-                		}
-            		}
-            		EndEpisode();
-        		}
-    		}
+    {
+        bool shoot = actionBuffers.DiscreteActions[0] == 1;
+        transform.Rotate(0.0f, 2.0f * actionBuffers.ContinuousActions[0], 0.0f);
+
+        if (shoot && !shot)
+        {
+            shot = true;
+            print("Shoot");
+            string tag = shootScript.Shoot();
+
+            if (tag == "Friendly")
+            {
+                AddReward(1f);
+            }
+            else if(tag == "Target")
+            {
+                AddReward(-1f);
+            }
+            else
+            {
+                AddReward(-0.5f);
+            }
+
+            print("cummulative: " + GetCumulativeReward());
+            EndEpisode();
+        }
+
+    }
 ```
 
-5. Trainen
+6. Trainen
 
    - Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
      Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
-     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
-     Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
+     opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken). Vindt u onderaan bij het trainingsverslag.
 
-6. Belonen
+7. Beloningen
 
    - Als de agent de target raakt krijgt die een positieve beloning.
    - Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
    - Als de agent de friendly raakt krijgt hij een grotere negatieve beloning.
 
-7. Afwerking
+8. Afwerking
    - UI: Een start scherm en reset scherm.
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
 
@@ -238,11 +247,12 @@ In dit gedeelte hebben we memory toegevoegd aan de agent zodat deze de eerste kl
 	- Als trainings veld gebruiken we 2 spheres met 2 verschillende kleuren. Deze speheres veranderen van positie als er een nieuwe episode start. Ook bevindt er zich aan 1 zijde van het veld een extra sphere die de kleur rood of groen zal bevatten. Dit is de kleur die de agent moet onthouden.
 	- ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
 - Grafieken
-	1. f
-	2. f
-	3. f
-	4. 
+	1. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_3t.jpg)
+		- In de bovestaande grafiek is te zien dat er veel verschil in de grafiek zit. Het gedeelte van 0.5M tot 4M zit de reward tussen 0.4 en 0.5 te schommelen. De reden hiervoor kan zijn dat de agent 1/2 kans heeft dat het, het rode element of het groene element moet raken. Na 4M daalt de reward weer tot tussen 0.2 en -0.2 waarna hij linear stijgt totdat hij stabiel is bij 9M.
+	2. ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_4t.jpg)
+		- Deze resultaten zijn van het brein dat we 5 minuten hebben laten runnen. Hieruit kunnen we afleiden dat hij van de 362 maar 2 keer fout heeft geschoten. En kunnen concluderen dat het brein werkt.
 - Conclusie
+	- Uit de resultaten kan ik afleiden dat het werken met geheugen een grote invloed heeft op deze resultaten. Ook is er een groot verschil in het aantal stappen dat we deze agent moesten laten trainen tegenover enkel de camera.
 
 ## Conclusie
 
