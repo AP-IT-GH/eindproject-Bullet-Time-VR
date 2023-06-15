@@ -92,6 +92,7 @@ Bij deze training gingen we de agent leren om zichzelf rond de daaien en nogstee
 	- Hierbij gebruijken we een continuous actions waarbij de agent zelf kan rond draaien.
 - Grafieken:
 	-Grafiek tensor bord i.v.m. kleuren herkennen en zelf rond draaien.
+	
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
 - Besluit:
 	- Aan de grafiek te zien is het duidelijk dat de extra toevoeging geen grote invloed heeft op de resultaten
