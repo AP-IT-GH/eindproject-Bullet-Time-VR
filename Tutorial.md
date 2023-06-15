@@ -277,7 +277,7 @@ Onze huidige AI-agent presteert over het algemeen goed en kan effectief reageren
 
 Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig kan zijn, hebben we besloten om deze functie niet te gebruiken in onze huidige toepassing. We zijn nog steeds tevreden met hoe onze AI-agent functioneert zonder het geheugen en geloven dat het spel een aantrekkelijke uitdaging biedt aan spelers.
 
-In de toekomst zouden er verschillende moeilijkheids graden gekozen kunnen worden. Dit zou dan bv gedaan kunnen worden door een agent maar een x aantal stappen te laten zetten waardoor deze beter/slechter is.
+In de toekomst zouden er verschillende moeilijkheids graden gekozen kunnen worden. Dit zou dan bv gedaan kunnen worden door een agent maar een x aantal stappen te laten trainen waardoor deze beter/slechter wordt.
 
 ## Bronvermelding
 
