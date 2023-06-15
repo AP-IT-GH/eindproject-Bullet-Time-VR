@@ -98,16 +98,5 @@ Bij deze training gingen we de agent leren om zichzelf rond de daaien en nogstee
 	- Aan de grafiek te zien is het duidelijk dat de extra toevoeging geen grote invloed heeft op de resultaten
 
 ### Kleur onthouden aan de hand van een camera
-
-
-////////////
-
-   - Vervolgens hebben wij hier het geheugen aan toegevoegd, dit zorgde voor wat tegenslag.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2.jpg)
-
-   - Hier de grafiek.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_2t.jpg)
-	
-   - Zelf hebben we ook logboeken bijgehouden. Hierbij wordt het aantal keren dat we hebben getest vastgelegd. Rood staat voor de juiste target, groen staat voor de vriendelijke target, en FOUT betekent dat       er geen van beide is geraakt. Hieruit kunnen we direct zien dat de agent een 50/50 kans neemt, omdat hij na verloop van tijd alleen naar rechts kijkt, waar hij een kans van 50% heeft.
-   ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/CamMem_1.jpg)
-   
+In dit gedeelte gaan we memory toevoegen aan de agent zodat deze een kleur kan onthouden.
+- Werking
