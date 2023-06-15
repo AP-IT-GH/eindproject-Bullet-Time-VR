@@ -1368,11 +1368,14 @@ MonoBehaviour:
     The aim of the game
     is to win in a gun dual.
 
-    You will need to shoot an enemy like the one behind
-    this text.
+    You will need to shoot an enemy.
+
+    The enemy
+    you need to shoot will be shown to you in the form of a wanted poster.
 
 
-    Good luck!'
+    Good
+    luck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15048,7 +15051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1738914510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15851,7 +15854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1801509430
 RectTransform:
   m_ObjectHideFlags: 0
