@@ -76,11 +76,27 @@ Als eerste opstelling hebben we ervoor gekozen om enkel de camera te gebruiken o
 	- Niet de juiste kleur en/of muur = AddReward(-1)
 - Grafieken:
 	- Trainings veld om klueren te herkennen.
+	
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_1.jpg)
 	- Grafiek tensor bord i.v.m. kleuren herkennen.
+	
 	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_2t.jpg)
 - Besluit:
 	- De agent leerde snel dat hij een beloning kreeg door op de kleur groen te schieten. Op het tensor bord is er te zien dat reward in een lineare lijn ligt. Ook heeft de agent na 80k stappen al een reward van bijna 1. Als we het uiteindelijke brein gebruiken is er te zien dat deze correct werkt.
+
+### Kleuren herkennen aan de hand van een camera met continuous actions
+Bij deze training gingen we de agent leren om zichzelf rond de daaien en nogsteeds de juiste kleur te schieten.
+
+- Werking:
+	- We herbruiken de vorige instellingen.
+	- Hierbij gebruijken we een continuous actions waarbij de agent zelf kan rond draaien.
+- Grafieken:
+	-Grafiek tensor bord i.v.m. kleuren herkennen en zelf rond draaien.
+	
+	![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/Training/Camera_3t.jpg)
+- Besluit:
+	- Aan de grafiek te zien is het duidelijk dat de extra toevoeging geen grote invloed heeft op de resultaten
+
 ### Kleur onthouden aan de hand van een camera
 
 

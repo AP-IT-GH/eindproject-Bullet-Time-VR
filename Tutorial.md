@@ -88,3 +88,16 @@ De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schie
 6. Afwerking
    - UI: Een start scherm en reset scherm.
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
+
+
+
+### Conclusie
+Ons westernspel is ontworpen om spelers uit te dagen om zo snel mogelijk een doelwit te raken, terwijl ze het opnemen tegen een AI-tegenstander. We hebben ons best gedaan om ervoor te zorgen dat het spel zowel speelbaar als eerlijk is, zodat spelers een leuke en uitdagende ervaring hebben.
+
+Onze huidige AI-agent presteert over het algemeen goed en kan effectief reageren op de acties van spelers. Echter, toen we probeerden om een getrainde agent met geheugen te implementeren in onze VR-omgeving, ondervonden we enkele problemen. Om die reden raden we het gebruik van geheugen in onze toepassing af.
+
+Het gebruik van geheugen in een AI-agent kan verschillende voordelen bieden, zoals het vermogen om te leren van eerdere ervaringen en beslissingen. Het stelt de agent in staat om te anticiperen op bepaalde situaties en beter te presteren na verloop van tijd. Echter, in ons specifieke geval bleek het geheugen niet goed te werken binnen onze VR-omgeving.
+
+We hebben vastgesteld dat de implementatie van het geheugen in onze agent leidde tot technische complicaties en ongewenste resultaten. Het had een negatieve invloed op de algehele prestaties en speelbaarheid van het spel. We hebben de moeilijkheid ervaren om het geheugen effectief te integreren in de VR-omgeving en het spelveld, waardoor de ervaring voor spelers minder bevredigend werd.
+
+Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig kan zijn, hebben we besloten om deze functie niet te gebruiken in onze huidige toepassing. We zijn nog steeds tevreden met hoe onze AI-agent functioneert zonder het geheugen en geloven dat het spel een aantrekkelijke uitdaging biedt aan spelers.
