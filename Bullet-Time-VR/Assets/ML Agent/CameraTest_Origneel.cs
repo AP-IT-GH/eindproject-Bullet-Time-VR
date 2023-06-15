@@ -4,7 +4,7 @@ using Unity.MLAgents.Sensors;
 using UnityEngine;
 
 
-public class CameraTest : Agent
+public class CameraTest_orgineel : Agent
 {
 
     public enum direction
@@ -34,7 +34,7 @@ public class CameraTest : Agent
     direction lookAt;
     direction positionGroen;
     direction positionRood;
-    Vector3 links = new Vector3(2f, 1f, -4f);
+    Vector3 links = new Vector3(2f, 1f, -4f) ;
     Vector3 rechts = new Vector3(-2f, 1f, -4f);
 
     public override void Initialize()
@@ -78,8 +78,8 @@ public class CameraTest : Agent
         else
         {
             CurrentColor = kleur.rood;
-            Groen_vb.SetActive(false);
-            Rood_vb.SetActive(true);
+            Groen_vb.SetActive(false);          
+            Rood_vb.SetActive(true);           
         }
     }
 
@@ -99,8 +99,7 @@ public class CameraTest : Agent
         bool shoot = actionBuffers.DiscreteActions[0] == 1;
         int rotate = actionBuffers.DiscreteActions[1];
 
-        if (rotate == 1 && !shot)
-        {    //Right
+        if (rotate == 1 && !shot) {    //Right
             Vector3 newRotation = new Vector3(0, -160, 0);
             transform.eulerAngles = newRotation;
             lookAt = direction.rechts;
@@ -133,11 +132,11 @@ public class CameraTest : Agent
     private void CheckGroen()
     {
         print("GreenCheck");
-        if (positionGroen == direction.links && lookAt == direction.links)
+        if ( positionGroen == direction.links && lookAt == direction.links)
         {
             AddReward(1f);
         }
-        else if (positionGroen == direction.rechts && lookAt == direction.rechts)
+        else if ( positionGroen == direction.rechts && lookAt == direction.rechts)
         {
             AddReward(1f);
         }
@@ -149,12 +148,12 @@ public class CameraTest : Agent
     private void CheckRood()
     {
         print("RedCheck");
-
+        
         if (positionRood == direction.links && lookAt == direction.links)  //Rechts
         {
             AddReward(1f);
         }
-        else if (positionRood == direction.rechts && lookAt == direction.rechts)
+        else if(positionRood == direction.rechts  && lookAt == direction.rechts)
         {
             AddReward(1f);
         }
@@ -184,7 +183,7 @@ public class CameraTest : Agent
         {
             DiscreteActionsOut[1] = 1;
         }
-        else if (horizontal < 0)
+        else if(horizontal < 0)
         {
             DiscreteActionsOut[1] = 2;
         }
