@@ -42,7 +42,11 @@ Bij het betreden van ons meeslepende spel wordt de spelers kort geïnformeerd ov
 
    - MaGuns
 
-3. Scripten
+3. Objecten
+
+   - Pistool: Je kunt dit object oppakken en hiermee schieten.
+
+4. Scripten
    - Een shoot script met raycast: Deze is om te bepalen wie de target of ander object heeft geraakt.
      Dit is van belang omdat de snelste het spel zal winnen.
    - Een target script die de schade opneemt en een functie kan activeren (dood gaan of disable).
@@ -83,20 +87,20 @@ De tweede is het schieten, Het is natuurlijk ook handig dat onze agent kan schie
     		}
 ```
 
-4. Trainen
+5. Trainen
 
    - Nu onze agent kan draaien en schieten kunnen we het geheugen gaan trainen.
      Dit door eerst onze target te laten zien, nu moet hij zich omdraaien de target
      opnieuw zoeken en zo snel mogelijk schieten op de target. Verdere informatie over het trainen van de agent (zoals grafieken).
      Vindt u in het trainingsverslag: https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Trainingsverslag.md
 
-5. Belonen
+6. Belonen
 
    - Als de agent de target raakt krijgt die een positieve beloning.
    - Als de agent de target niet raakt krijgt hij een kleine negatieve beloning.
    - Als de agent de friendly raakt krijgt hij een grotere negatieve beloning.
 
-6. Afwerking
+7. Afwerking
    - UI: Een start scherm en reset scherm.
      ![image](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Images/UI_Example.JPG)
 
@@ -133,9 +137,11 @@ We gaan dit in verschillende stadia doen
 We maken voor de eind toepassing niet gebruik van het geheugen. Dit doen we omdat het geheugen getraind is om enkel de optie links of rechts te kiezen. We konden de agent niet opnieuw trainen waarbij deze zelf kon rond draaien.
 
 ## Trainingsverslag
+
 Hierond vindt u terug hoe wij onze agent hebben getraind. In ons eindresultaat maken we gebruik van de agent die de correcte kleur kan aanduiden, waarom we dit doen zal u hieronder kunnen lezen.
 
 ### Parameters
+
 De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd "Cowboy" in Unity's ML-Agents, die wordt getraind met behulp van het Proximal Policy Optimization (PPO) algoritme. Hier is een korte uitleg van de belangrijkste hyperparameters die in de gegeven configuratie worden gebruikt:
 
 - `batch_size`: Het aantal ervaringen (samples) dat wordt gebruikt om een enkele optimalisatiestap uit te voeren.
@@ -161,6 +167,7 @@ De parameters die we gebruiken zijn voor een specifieke gedragscategorie genaamd
 Dit zijn slechts enkele van de hyperparameters die kunnen worden aangepast in het trainingsproces van een ML-Agent in Unity. Door deze waarden aan te passen, kun je het leergedrag van de agent beïnvloeden en optimaliseren voor het specifieke probleem of de taak die je wilt oplossen.
 
 **Hyper parameters**
+
 ```
 behaviors:
   Cowboy:
@@ -192,13 +199,17 @@ behaviors:
     summary_freq: 10000
     threaded: true
 ```
+
 Onze trainings file kan u terug vinden op volgende [link](https://github.com/AP-IT-GH/eindproject-Bullet-Time-VR/blob/main/Bullet-Time-VR/Assets/ML%20Agent/config/Cowboy.yaml). Deze trainings file werd gebruikt voor alle trainingen die we hebben uitgevoerd in dit project. Om het gedeelte memory aan of uit te zetten moesten we dit gedeelte toevoegen/verwijderen.
 
 ### Trainingen
+
 #### Kleuren herkennen a.d.h.v. een camera
+
 We zijn begonnen om de agent te gebruiken om kleuren te herkennen.
 
 #### Kleuren onthouden a.d.h.v. een camera en geheugen
+
 In dit gedeelte hebben we memory toegevoegd aan de angent zodat deze de eerste kleur dat hij zag kan onthouden en hierna op de juiste kan schieten.
 
 ## Conclusie
@@ -214,7 +225,8 @@ We hebben vastgesteld dat de implementatie van het geheugen in onze agent leidde
 Hoewel we begrijpen dat het gebruik van geheugen in sommige gevallen voordelig kan zijn, hebben we besloten om deze functie niet te gebruiken in onze huidige toepassing. We zijn nog steeds tevreden met hoe onze AI-agent functioneert zonder het geheugen en geloven dat het spel een aantrekkelijke uitdaging biedt aan spelers.
 
 ## Bronvermelding
+
 1. Marwan Mattar, (2018, Maart 14). Memory-enhanced Agents using Recurrent Neural Networks. https://github.com/miyamotok0105/unity-ml-agents/blob/master/docs/Feature-Memory.md
 2. Unity Technologies, (2022). Training Configuration File. https://unity-technologies.github.io/ml-agents/Training-Configuration-File/#memory-enhanced-agents-using-recurrent-neural-networks
 3. Matt Cone, (2023). Markdown Cheat sheet. https://www.markdownguide.org/cheat-sheet/
-4. 
+4.
