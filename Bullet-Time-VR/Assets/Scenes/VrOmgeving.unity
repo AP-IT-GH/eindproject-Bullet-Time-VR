@@ -12730,7 +12730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -16841,9 +16841,9 @@ MonoBehaviour:
   shootScriptAgent: {fileID: 1996951488}
   Agent: {fileID: 2135342833}
   AgentScript: {fileID: 2135342838}
-  wonUI: {fileID: 0}
-  lostUI: {fileID: 0}
-  bothLostUI: {fileID: 0}
+  wonUI: {fileID: 1350074030}
+  lostUI: {fileID: 128559130}
+  bothLostUI: {fileID: 55266202}
   countDownUIText: {fileID: 467223490}
   countdownDuration: 5
 --- !u!4 &1904162902
